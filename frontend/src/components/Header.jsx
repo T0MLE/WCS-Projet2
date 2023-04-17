@@ -9,8 +9,6 @@ function Header() {
           Get into the <br /> fitness journey
         </h2>
         <button type="button">Abonne toi pelo</button>
-
-        
       </header>
     </div>
   );
