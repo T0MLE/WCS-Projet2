@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 function BodyPartExercises({ exercise }) {
   const [filteredArr, setFilteredArr] = useState([]);
   const [uniqueEx, setUniqueEx] = useState([]);
-  const mekouille = window.location.pathname.slice(1).split("b").join(" b");
-  console.info(mekouille.includes("back"));
+  const splitPath = window.location.pathname.slice(1).split("b").join(" b");
+  console.info(splitPath.includes("back"));
 
   useEffect(() => {
     console.warn(exercise);
@@ -26,7 +26,7 @@ function BodyPartExercises({ exercise }) {
             response.filter((ex) =>
               ex.target?.Primary?.includes(
                 window.location.pathname.slice(1).includes("back")
-                  ? mekouille
+                  ? splitPath
                   : window.location.pathname.slice(1)
               )
             )
@@ -38,7 +38,7 @@ function BodyPartExercises({ exercise }) {
         exercise.filter((ex) =>
           ex.target?.Primary?.includes(
             window.location.pathname.slice(1).includes("back")
-              ? mekouille
+              ? splitPath
               : window.location.pathname.slice(1)
           )
         )
