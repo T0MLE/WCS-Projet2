@@ -11,7 +11,7 @@ function App() {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "f12aac5679msh18713fa11a2b634p163927jsn7679b4ef289b",
+      "X-RapidAPI-Key": import.meta.env.VITE_APP_KEY,
       "X-RapidAPI-Host": "musclewiki.p.rapidapi.com",
     },
   };
