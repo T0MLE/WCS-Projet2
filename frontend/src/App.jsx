@@ -1,8 +1,8 @@
-import Newsletter from "@components/Newsletter";
+import Newsletter from "./components/Newsletter";
 import Header from "./components/Header";
-import Footer from "@components/Footer"
+import Footer from "./components/Footer";
 import "./App.scss";
-import Navbar from "@components/Navbar";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (

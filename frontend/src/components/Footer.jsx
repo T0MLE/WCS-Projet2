@@ -10,10 +10,10 @@ function Footer() {
         <p>2023™</p>
       </div>
       <div className="linkFooter">
-        <a href="">Mentions légales</a>
-        <a href="">Conditions générales</a>
-        <a href="">Politique de confidentialité</a>
-        <a href="">Contacter le support</a>
+        <a href="/">Mentions légales</a>
+        <a href="/">Conditions générales</a>
+        <a href="/">Politique de confidentialité</a>
+        <a href="/">Contacter le support</a>
       </div>
       <div className="social">
         <a href="/">
