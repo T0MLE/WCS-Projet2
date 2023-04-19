@@ -1,16 +1,20 @@
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import Exercise from "./Exercise";
+import Navbar from "./Navbar";
 
 function BodyPartExercises({ exercises, handleExerciseChange }) {
   const { exercise } = useParams();
   handleExerciseChange(exercise);
+  if (exercise === "Lowerback") handleExerciseChange("Lower back");
+  if (exercise === "Midback") handleExerciseChange("Mid back");
 
   return (
-    <div>
+    <div className="body-part-exercises">
       <button type="button">
         <Link to="/">RETOUR</Link>
       </button>
+      <h2>{exercise} exercises</h2>
       {exercises?.map((e) => {
         return (
           <Exercise
@@ -21,6 +25,7 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
           />
         );
       })}
+      <Navbar />
     </div>
   );
 }
