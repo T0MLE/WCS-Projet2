@@ -1,0 +1,25 @@
+@media screen and (min-width: 1024px) {
+    .mySwiper {
+        display: none;
+    }
+
+    .DesktopSwiper {
+        display: flex;
+        justify-content: center;
+    }
+
+    h2 {
+        font-size: 40px;
+        margin-left: 32px;
+    }
+    #mannequin-front {
+        justify-content: flex-end;
+        width: 48%;
+        margin-right: 2%;
+    }
+    #mannequin-back {
+        justify-content: flex-start;
+        width: 48%;
+        margin-left: 2%;
+    }
+}
