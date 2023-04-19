@@ -9,7 +9,7 @@ function App() {
   useEffect(() => {
     fetch("https://musclewiki.p.rapidapi.com/exercises", {
       headers: {
-        "X-RapidAPI-Key": "3aba8f4363msh2ebf17ce6dfbe7ap1a3dd3jsnc97ed0d3ca7b",
+        "X-RapidAPI-Key": import.meta.env.VITE_APP_KEY,
       },
     })
       .then((res) => res.json())
