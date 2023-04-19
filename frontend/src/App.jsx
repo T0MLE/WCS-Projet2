@@ -3,9 +3,8 @@ import "./App.scss";
 import "./desktop.scss";
 import { Route, Routes } from "react-router-dom";
 import BodyPartExercises from "./components/BodyPartExercises";
-import Programs from "./components/Programs";
-import ProgramsSec from "./components/ProgramsSec";
-import MannequinWrapper from "./components/MannequinWrapper";
+
+import Home from "./components/Home";
 
 function App() {
   const [exercises, setExercises] = useState([]);
@@ -44,22 +43,18 @@ function App() {
   }, [filteredExercises]);
 
   return (
-    <>
-      <ProgramsSec />
-      <Programs week={8} />
-      <Routes>
-        <Route path="/" element={<MannequinWrapper />} />
-        <Route
-          path="/:exercise"
-          element={
-            <BodyPartExercises
-              exercises={uniqueEx}
-              handleExerciseChange={setFilter}
-            />
-          }
-        />
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route
+        path="/:exercise"
+        element={
+          <BodyPartExercises
+            exercises={uniqueEx}
+            handleExerciseChange={setFilter}
+          />
+        }
+      />
+    </Routes>
   );
 }
 

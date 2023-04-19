@@ -1,137 +1,289 @@
-$color_1: lightgrey;
-$color_2: lightcoral;
-$background-color_1: lightgray;
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@600&display=swap');
+$color_1: white;
+$color_2: black;
 $font-family_1: "Poppins", sans-serif;
-$background-color_1: #f5f8fa;
+$background-color_1: white;
+$background-color_2: #908c8c86;
 
-@import "https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap";
+$color_4: lightgrey;
+$color_3: lightcoral;
+
+@import "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap";
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	background-color: #F5F8FA;
+  margin: 0;
+  padding: 0;
+  font-family: $font-family_1;
+  box-sizing: border-box;
+}
+header {
+  background-image: url(./assets/fond-bleu-2.png);
+  background-position: 80% 90%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  text-align: center;
+  h1 {
+    padding-top: 50px;
+    text-transform: uppercase;
+    color: $color_1;
+    font-weight: 600;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  h2 {
+    margin-top: 420px;
+    text-transform: uppercase;
+    color: $color_1;
+    font-weight: bold;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  button {
+    margin-top: 70px;
+    padding: 10px 50px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    background-color: $background-color_1;
+    font-weight: 500;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+  }
+}
+.navbar {
+  background-color: $background-color_1;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 60px;
+  align-items: center;
+  border-top: 1px solid lightgray;
+}
+nav {
+  ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0 20px;
+    a {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      color: $color_2;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 10px;
+    }
+  }
+}
+/* ---------------------------------------------------NEWSLETTER----------------------------------------------------------------- */
+
+.sectionNews {
+  background-image: url(./assets/meuf2.png);
+  background-position: left;
+  background-size: cover;
+  height: 650px;
+  padding-top: 50px;
+}
+.newsletter {
+  border: 1px solid white;
+  width: 75%;
+  margin: auto;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: $background-color_2;
+  height: fit-content;
+  text-align: center;
+  backdrop-filter: blur(2px);
+  h2 {
+    text-transform: uppercase;
+    color: $color_1;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.393);
+  }
+  p {
+    text-align: start;
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    color: $color_1;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  input {
+    margin-top: 40px;
+    height: 30px;
+    width: 80%;
+    border-radius: 30px;
+    border: 1px solid grey;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    font-size: 16px;
+    padding: 20px 0;
+  }
+  button {
+    margin-top: 10px;
+    padding: 0 20px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+  }
 }
 
+/* ---------------------------------------------------FOOTER----------------------------------------------------------------- */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 65px;
+  margin: 0 20px;
+}
+.footerLogo {
+  font-size: 7px;
+  width: 20%;
+  text-transform: uppercase;
+  text-align: center;
+  h3 {
+    font-size: 10px;
+  }
+}
+.linkFooter {
+  a {
+    text-decoration: none;
+    color: $color_2;
+    font-size: 7px;
+    line-height: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+  }
+}
+.social {
+  width: 50%;
+  text-align: center;
+  img {
+    width: auto;
+    height: 38px;
+    padding: 7px;
+    padding-left: 10px;
+  }
+}
 .body-map__body {
-	width: 100%;
-	height: 85vh;
-	margin: auto;
-	display: flex;
-	justify-content: center;
-	margin-bottom: 32px;
-	scroll-snap-align: center;
+  width: 100%;
+  height: 85vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  scroll-snap-align: center;
 }
 .body-map__muscle {
-	color: $color_1;
-	&:hover {
-		color: $color_2;
-	}
-}
-img {
-	width: 100px;
+  color: $color_4;
+  &:hover {
+    color: $color_3;
+  }
 }
 .mannequin-wrapper {
-	background-color: $background-color_1;
+  background-color: $background-color_1;
 }
 .ProgramSection {
-	margin: 10px;
-	padding: 15px;
+  margin: 10px;
+  padding: 15px;
 }
 .ProgramsSec {
-	display: flex;
-	width: 100%;
-	height: 50vh;
-	overflow-x: scroll;
-	overflow-y: hidden;
-	scroll-snap-type: x mandatory;
-	scroll-behavior: smooth;
-	white-space: nowrap;
-	&::-webkit-scrollbar {
-		display: none;
-	}
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .DesktopSwiper {
-	display: none;
+  display: none;
 }
 
 h2 {
-	font-family: 'Poppins' ;
-	font-size: 24px;
-	margin: 8px;
+  font-family: "Poppins";
+  font-size: 24px;
+  margin: 8px;
 }
 
 .mannequin-wrapper {
-	padding-top: 40px;
+  padding-top: 40px;
 }
 .ProgramsTit {
-	font-size: 6vw;
-	font-family: $font-family_1;
-	margin-bottom: 30px;
+  font-size: 6vw;
+  font-family: $font-family_1;
+  margin-bottom: 30px;
 }
 .Description {
-	font-size: 4vw;
-	font-family: $font-family_1;
-	margin-bottom: 50px;
+  font-size: 4vw;
+  font-family: $font-family_1;
+  margin-bottom: 50px;
 }
 .Card1 {
-	display: inline-block;
-	flex-basis: 100%;
-	height: 100%;
-	border-radius: 40px;
-	scroll-snap-align: center;
-	margin-right: 50px;
-	background-image: url("./assets/bp.png");
-	flex-shrink: 0;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	&:last-child {
-		margin-right: 0;
-	}
+  display: inline-block;
+  flex-basis: 100%;
+  height: 100%;
+  border-radius: 40px;
+  scroll-snap-align: center;
+  margin-right: 50px;
+  background-image: url("./assets/bp.png");
+  flex-shrink: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &:last-child {
+    margin-right: 0;
+  }
 }
 .Card2 {
-	display: inline-block;
-	flex-basis: 100%;
-	height: 100%;
-	border-radius: 40px;
-	scroll-snap-align: center;
-	margin-right: 50px;
-	background-image: url("./assets/bt.png");
-	flex-shrink: 0;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+  display: inline-block;
+  flex-basis: 100%;
+  height: 100%;
+  border-radius: 40px;
+  scroll-snap-align: center;
+  margin-right: 50px;
+  background-image: url("./assets/bt.png");
+  flex-shrink: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .Card3 {
-	display: inline-block;
-	flex-basis: 100%;
-	height: 100%;
-	border-radius: 40px;
-	scroll-snap-align: center;
-	margin-right: 50px;
-	background-image: url("./assets/mb.png");
-	flex-shrink: 0;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+  display: inline-block;
+  flex-basis: 100%;
+  height: 100%;
+  border-radius: 40px;
+  scroll-snap-align: center;
+  margin-right: 50px;
+  background-image: url("./assets/mb.png");
+  flex-shrink: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .Card4 {
-	display: inline-block;
-	flex-basis: 100%;
-	height: 100%;
-	border-radius: 40px;
-	scroll-snap-align: center;
-	margin-right: 50px;
-	background-image: url("./assets/st.png");
-	flex-shrink: 0;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+  display: inline-block;
+  flex-basis: 100%;
+  height: 100%;
+  border-radius: 40px;
+  scroll-snap-align: center;
+  margin-right: 50px;
+  background-image: url("./assets/st.png");
+  flex-shrink: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .Card {
-	img {
-		border-radius: 20px;
-	}
+  img {
+    border-radius: 20px;
+  }
 }
