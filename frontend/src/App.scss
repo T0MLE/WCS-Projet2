@@ -1,16 +1,18 @@
 $color_1: lightgrey;
 $color_2: lightcoral;
 $background-color_1: lightgray;
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Poppins:wght@600&display=swap');
 $font-family_1: "Poppins", sans-serif;
 $background-color_1: #f5f8fa;
 
-@import "https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap";
-* {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+}
+
+body {
 	background-color: #F5F8FA;
+
 }
 
 .body-map__body {
@@ -135,3 +137,31 @@ h2 {
 		border-radius: 20px;
 	}
 }
+
+.div-exercise {
+	width: 90%;
+	background-color: white;
+	border-radius: 16px;
+	padding: 16px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	margin: 16px auto;
+	display: flex;
+	flex-direction: column;
+	video {
+	height: auto;
+	width: 100%;
+	border-radius: 16px;
+}
+.exercise-title {
+	font-family:$font-family_1 ;
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+.exercise-description {
+	font-family:$font-family_1 ;
+	font-weight: 200;
+	text-align: justify;
+	margin-top: 8px;
+}
+}
+

@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 
 function Exercise({ name, video, description }) {
   return (
-    <div>
-      <p>{name}</p>
+    <div className="div-exercise">
+      <p className="exercise-title">{name}</p>
       <video controls>
         <source src={video} type="video/mp4" />{" "}
         <track default kind="captions" />
       </video>
-      <p>{description}</p>
+      <p className="exercise-description">{description}</p>
     </div>
   );
 }

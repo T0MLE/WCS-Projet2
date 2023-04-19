@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
+import Exercise from "./Exercise";
 
 function BodyPartExercises({ exercises, handleExerciseChange }) {
   const { exercise } = useParams();
@@ -11,11 +12,20 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
         <Link to="/">RETOUR</Link>
       </button>
       {exercises?.map((e) => {
-        return <p key={e.id}>{e.exercise_name}</p>;
+        return (
+          <Exercise
+            key={e.id}
+            name={e.exercise_name}
+            video={e.videoURL}
+            description={e.steps}
+          />
+        );
       })}
     </div>
   );
 }
+
+/* <p key={e.id}>{e.exercise_name}</p> */
 
 export default BodyPartExercises;
 
