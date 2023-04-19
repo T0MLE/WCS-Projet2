@@ -3,7 +3,8 @@ import "./App.scss";
 import "./desktop.scss";
 import { Route, Routes } from "react-router-dom";
 import BodyPartExercises from "./components/BodyPartExercises";
-
+import Programs from "./components/Programs";
+import ProgramsSec from "./components/ProgramsSec";
 import MannequinWrapper from "./components/MannequinWrapper";
 
 function App() {
@@ -43,38 +44,23 @@ function App() {
   }, [filteredExercises]);
 
   return (
-    <Routes>
-      <Route path="/" element={<MannequinWrapper />} />
-      <Route
-        path="/:exercise"
-        element={
-          <BodyPartExercises
-            exercises={uniqueEx}
-            handleExerciseChange={setFilter}
-          />
-        }
-      />
-    </Routes>
+    <>
+      <ProgramsSec />
+      <Programs week={8} />
+      <Routes>
+        <Route path="/" element={<MannequinWrapper />} />
+        <Route
+          path="/:exercise"
+          element={
+            <BodyPartExercises
+              exercises={uniqueEx}
+              handleExerciseChange={setFilter}
+            />
+          }
+        />
+      </Routes>
+    </>
   );
-
-  // return (
-  //   <div className="App">
-  //     {exercise.map((e, index) => {
-  //       console.info(e);
-  //       return (
-  //         <div>
-  //           {index} {e.exercise_name}
-  //         </div>
-  //       );
-  //     })}
-  //     <video controls>
-  //       <source
-  //         src="https://media.musclewiki.com/media/uploads/videos/branded/male-band-high-hammer-curl-front.mp4#t=0.1"
-  //         type="video/mp4"
-  //       />
-  //     </video>
-  //   </div>
-  // );
 }
 
 export default App;
