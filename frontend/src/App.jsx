@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Programs from "./components/Programs";
-import "./App.css";
+import "./App.scss";
 import ProgramsSec from "./components/ProgramsSec";
 
 function App() {
