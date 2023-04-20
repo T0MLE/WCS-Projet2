@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import Exercise from "./Exercise";
-import Navbar from "./Navbar";
 
 function BodyPartExercises({ exercises, handleExerciseChange }) {
   const { exercise } = useParams();
@@ -25,7 +24,6 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
           />
         );
       })}
-      <Navbar />
     </div>
   );
 }
