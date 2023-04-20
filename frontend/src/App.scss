@@ -58,7 +58,6 @@ header {
   position: fixed;
   width: 100%;
   bottom: 0;
-  height: 60px;
   align-items: center;
   border-top: 1px solid lightgray;
   z-index: 999;
@@ -138,10 +137,10 @@ nav {
 /* ---------------------------------------------------FOOTER----------------------------------------------------------------- */
 .footer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding-top: 10px;
-  padding-bottom: 65px;
+  align-items: center;
+  padding-bottom: 80px;
   margin: 0 20px;
 }
 .footerLogo {
@@ -178,12 +177,13 @@ nav {
 }
 .body-map__body {
   width: 100%;
-  height: 85vh;
+  height: calc(100vh - 200px);
   margin: auto;
   display: flex;
   justify-content: center;
   margin-bottom: 32px;
   scroll-snap-align: center;
+
 }
 .body-map__muscle {
   color: $color_4;
@@ -334,6 +334,7 @@ video {
   font-size: 16px !important;
   line-height: 24px !important;
   text-align: justify !important;
+  margin-top: 16px !important;
 }
 .body-part-exercises {
 	padding-bottom: 65px;
@@ -354,4 +355,12 @@ a {
 	align-items: center;
 	width: 90%;
 	margin: auto;
+}
+
+.muscle-section-title {
+  margin: 32px 16px;
+}
+
+.mySwiper {
+  margin-bottom: 32px;
 }

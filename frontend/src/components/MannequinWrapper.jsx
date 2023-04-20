@@ -1,6 +1,9 @@
-import { Swiper, SwiperSlide, Pagination } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
+
+import { Pagination } from "swiper";
 
 import MannequinBack from "./MannequinBack";
 import MannequinFront from "./MannequinFront";
@@ -8,7 +11,7 @@ import MannequinFront from "./MannequinFront";
 function MannequinWrapper() {
   return (
     <>
-      <h2>Find an exercise</h2>
+      <h2 className="muscle-section-title">Find an exercise</h2>
       <div className="mySwiper">
         <Swiper
           spaceBetween={30}
