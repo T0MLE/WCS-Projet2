@@ -1,8 +1,6 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, Pagination } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
-
-import { Pagination } from "swiper";
 
 import MannequinBack from "./MannequinBack";
 import MannequinFront from "./MannequinFront";
@@ -14,17 +12,15 @@ function MannequinWrapper() {
       <div className="mySwiper">
         <Swiper
           spaceBetween={30}
-          pagination={{
-            clickable: true,
-          }}
+          pagination
           modules={[Pagination]}
           className="mySwiper"
         >
           <SwiperSlide>
-            <MannequinFront />
+            <MannequinFront className="mannequin" />
           </SwiperSlide>
           <SwiperSlide>
-            <MannequinBack />
+            <MannequinBack className="mannequin" />
           </SwiperSlide>
         </Swiper>
       </div>
