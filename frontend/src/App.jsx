@@ -3,7 +3,6 @@ import "./App.scss";
 import "./desktop.scss";
 import { Route, Routes } from "react-router-dom";
 import BodyPartExercises from "./components/BodyPartExercises";
-
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 

@@ -8,7 +8,7 @@ function Header() {
         <h2>
           Get into the <br /> fitness journey
         </h2>
-        <button type="button">Abonne toi pelo</button>
+        <button type="button">Join the team</button>
       </header>
     </div>
   );
