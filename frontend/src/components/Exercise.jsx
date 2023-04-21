@@ -5,7 +5,8 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-function Exercise({ name, video, description }) {
+function Exercise({ name, video, description, category, difficulty }) {
+  // console.info(category, difficulty);
   return (
     <div className="accordion">
       <Accordion
@@ -41,6 +42,8 @@ Exercise.propTypes = {
   name: PropTypes.string.isRequired,
   video: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  difficulty: PropTypes.string.isRequired,
 };
 
 export default Exercise;

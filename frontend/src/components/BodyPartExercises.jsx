@@ -1,15 +1,42 @@
+import { useEffect, useState } from "react";
+
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import Exercise from "./Exercise";
 
 function BodyPartExercises({ exercises, handleExerciseChange }) {
   const { exercise } = useParams();
+
+  const [filter, setFilter] = useState(false);
+  const [filteredExercises, setFilteredExercises] = useState(exercises);
+
+  useEffect(() => {
+    if (filter && filter !== "false") {
+      setFilteredExercises(exercises.filter((exo) => exo.Category === filter));
+      return;
+    }
+    if (exercises.length) {
+      setFilteredExercises(exercises);
+    }
+  }, [filter, exercises.length]);
+
   handleExerciseChange(exercise);
   if (exercise === "Lowerback") handleExerciseChange("Lower back");
   if (exercise === "Midback") handleExerciseChange("Mid back");
 
   return (
     <div className="body-part-exercises">
+      <select
+        name=""
+        id=""
+        value={filter}
+        onChange={(e) => setFilter(e.target.value)}
+      >
+        <option value={false}>--- choose ---</option>
+        <option value="Barbell">Barbell</option>
+        <option value="Dumbbells">Dumbbells</option>
+      </select>
+
       <div className="arrow-title">
         <Link to="/">
           <svg
@@ -55,13 +82,15 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
 
         <h2>{exercise} exercises</h2>
       </div>
-      {exercises?.map((e) => {
+      {filteredExercises?.map((e) => {
         return (
           <Exercise
             key={e.id}
             name={e.exercise_name}
             video={e.videoURL}
             description={e.steps.join(" ")}
+            category={e.Category}
+            difficulty={e.Difficulty}
           />
         );
       })}
