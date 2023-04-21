@@ -1,5 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Link } from "react-router-dom";
 
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
@@ -21,7 +22,10 @@ function ProgramsSec() {
         modules={[Pagination]}
         className="ProgramsSec"
       >
-        <SwiperSlide className="Card1" />
+        <SwiperSlide className="Card1">
+          <Link className="linkcard" to="/bootypump" />
+        </SwiperSlide>
+
         <SwiperSlide className="Card2" />
         <SwiperSlide className="Card3" />
         <SwiperSlide className="Card4" />

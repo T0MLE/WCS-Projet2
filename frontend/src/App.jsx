@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import BodyPartExercises from "./components/BodyPartExercises";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import Programs from "./components/Programs";
 
 function App() {
   const [exercises, setExercises] = useState([]);
@@ -42,6 +43,12 @@ function App() {
     ]);
   }, [filteredExercises]);
 
+  const Pr1 = [
+    [206, 234, 131, 513, 135],
+    [130, 559, 165, 145, 534],
+    [230, 134, 132, 139, 503],
+  ];
+
   return (
     <>
       <Routes>
@@ -54,6 +61,10 @@ function App() {
               handleExerciseChange={setFilter}
             />
           }
+        />
+        <Route
+          path="/bootypump"
+          element={<Programs exercises={exercises} day={3} prog={Pr1} />}
         />
       </Routes>
       <Navbar />

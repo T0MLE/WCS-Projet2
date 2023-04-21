@@ -12,7 +12,7 @@ function MannequinWrapper() {
   return (
     <>
       <h2 className="muscle-section-title">Find an exercise</h2>
-      <div className="mySwiper">
+      <div className="mySwiper" id="swiper">
         <Swiper
           spaceBetween={30}
           pagination
@@ -25,6 +25,10 @@ function MannequinWrapper() {
           <SwiperSlide>
             <MannequinBack className="mannequin" />
           </SwiperSlide>
+          <div className="swiper-pagination">
+            <span className="swiper-pagination-bullet">prout</span>
+            <span className="swiper-pagination-bullet">prout</span>
+          </div>
         </Swiper>
       </div>
 
