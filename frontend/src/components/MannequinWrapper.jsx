@@ -1,4 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 
@@ -10,21 +11,19 @@ import MannequinFront from "./MannequinFront";
 function MannequinWrapper() {
   return (
     <>
-      <h2>Find an exercise</h2>
+      <h2 className="muscle-section-title">Find an exercise</h2>
       <div className="mySwiper">
         <Swiper
           spaceBetween={30}
-          pagination={{
-            clickable: true,
-          }}
+          pagination
           modules={[Pagination]}
           className="mySwiper"
         >
           <SwiperSlide>
-            <MannequinFront />
+            <MannequinFront className="mannequin" />
           </SwiperSlide>
           <SwiperSlide>
-            <MannequinBack />
+            <MannequinBack className="mannequin" />
           </SwiperSlide>
         </Swiper>
       </div>

@@ -3,8 +3,8 @@ import "./App.scss";
 import "./desktop.scss";
 import { Route, Routes } from "react-router-dom";
 import BodyPartExercises from "./components/BodyPartExercises";
-
 import Home from "./components/Home";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [exercises, setExercises] = useState([]);
@@ -43,18 +43,21 @@ function App() {
   }, [filteredExercises]);
 
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route
-        path="/:exercise"
-        element={
-          <BodyPartExercises
-            exercises={uniqueEx}
-            handleExerciseChange={setFilter}
-          />
-        }
-      />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/:exercise"
+          element={
+            <BodyPartExercises
+              exercises={uniqueEx}
+              handleExerciseChange={setFilter}
+            />
+          }
+        />
+      </Routes>
+      <Navbar />
+    </>
   );
 }
 

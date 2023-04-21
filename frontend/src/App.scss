@@ -3,7 +3,6 @@ $color_2: black;
 $font-family_1: "Poppins", sans-serif;
 $background-color_1: white;
 $background-color_2: #908c8c86;
-
 $color_4: lightgrey;
 $color_3: lightcoral;
 
@@ -14,9 +13,12 @@ $color_3: lightcoral;
   font-family: $font-family_1;
   box-sizing: border-box;
 }
+body {
+	background-color: #f5f8fa;
+  }
 header {
   background-image: url(./assets/fond-bleu-2.png);
-  background-position: 80% 90%;
+  background-position: 85% 90%;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -25,25 +27,28 @@ header {
     padding-top: 50px;
     text-transform: uppercase;
     color: $color_1;
-    font-weight: 600;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	font-style: normal;
+	font-weight: 600;
+	font-size: 32px;
+	line-height: 48px;    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   h2 {
     margin-top: 420px;
     text-transform: uppercase;
     color: $color_1;
-    font-weight: bold;
-    letter-spacing: 2px;
-    word-spacing: 3px;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 30px;
+	line-height: 45px;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   button {
-    margin-top: 70px;
-    padding: 10px 50px;
+    margin-top: 40px;
+    padding: 8px 50px;
     border-radius: 30px;
     text-transform: uppercase;
     background-color: $background-color_1;
-    font-weight: 500;
+    font-weight: 600;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border: none;
   }
@@ -53,7 +58,6 @@ header {
   position: fixed;
   width: 100%;
   bottom: 0;
-  height: 60px;
   align-items: center;
   border-top: 1px solid lightgray;
   z-index: 999;
@@ -133,10 +137,10 @@ nav {
 /* ---------------------------------------------------FOOTER----------------------------------------------------------------- */
 .footer {
   display: flex;
-  align-items: center;
   justify-content: space-between;
   padding-top: 10px;
-  padding-bottom: 65px;
+  align-items: center;
+  padding-bottom: 80px;
   margin: 0 20px;
 }
 .footerLogo {
@@ -162,6 +166,8 @@ nav {
 .social {
   width: 50%;
   text-align: center;
+  display: flex;
+  justify-content: flex-end;
   img {
     width: auto;
     height: 38px;
@@ -171,12 +177,13 @@ nav {
 }
 .body-map__body {
   width: 100%;
-  height: 85vh;
+  height: calc(100vh - 200px);
   margin: auto;
   display: flex;
   justify-content: center;
   margin-bottom: 32px;
   scroll-snap-align: center;
+
 }
 .body-map__muscle {
   color: $color_4;
@@ -287,4 +294,73 @@ h2 {
   img {
     border-radius: 20px;
   }
+}
+
+.div-exercise {
+  width: 90%;
+  background-color: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 16px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+video {
+  height: auto;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#exercise-title {
+  font-family: $font-family_1 !important ;
+  font-style: normal !important ;
+  font-weight: 600 !important ;
+  font-size: 16px !important ;
+  line-height: 24px !important ;
+  margin-right: 16px !important;
+}
+#exercise-description {
+  font-family: "Poppins" !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 24px !important;
+  text-align: justify !important;
+  margin-top: 16px !important;
+}
+.body-part-exercises {
+	padding-bottom: 65px;
+}
+
+.backarrow {
+	height: 32px;
+	width: 32px;
+}
+
+a {
+	display: flex;
+}
+
+.arrow-title {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	width: 90%;
+	margin: auto;
+}
+
+.muscle-section-title {
+  margin: 32px 16px;
+}
+
+.mySwiper {
+  margin-bottom: 32px;
 }
