@@ -30,7 +30,7 @@ function Exercise({ name, video, description }) {
             <source src={video} type="video/mp4" />{" "}
             <track default kind="captions" />
           </video>
-          <Typography id="exercise-description">
+          <div id="exercise-description">
             {description.map((e, i) => {
               return (
                 <div id="steps">
@@ -38,7 +38,7 @@ function Exercise({ name, video, description }) {
                 </div>
               );
             })}
-          </Typography>
+          </div>
         </AccordionDetails>
       </Accordion>
     </div>
@@ -48,7 +48,7 @@ function Exercise({ name, video, description }) {
 Exercise.propTypes = {
   name: PropTypes.string.isRequired,
   video: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Exercise;
