@@ -198,8 +198,6 @@ nav {
     display: none;
   }
 }
-/* ---------------------------------------------------PROGRAM COMPONENT----------------------------------------------------------------- */
-
 .ProgramsTit {
   font-size: 6vw;
   font-family: $font-family_1;
@@ -209,7 +207,16 @@ nav {
   font-size: 4vw;
   font-family: $font-family_1;
   margin: 40px 0;
+  a {
+    display: initial;
+    all: unset
+    
+  }
 }
+
+
+/* ---------------------------------------------------PROGRAM COMPONENT----------------------------------------------------------------- */
+
 // .Card1 {
 //   display: inline-block;
 //   flex-basis: 100%;

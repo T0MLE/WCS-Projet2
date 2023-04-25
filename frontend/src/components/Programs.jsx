@@ -56,7 +56,7 @@ function Programs({ day, exercises, prog }) {
         <h2>Here are our programs</h2>
       </div>
       <p>Start here</p>
-      <Start />
+      <Start content="Start this program" />
       <div className="test">
         {arr.map((e, index) => {
           return <Day prog={prog[index]} exercises={exercises} index={index} />;

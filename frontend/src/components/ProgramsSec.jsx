@@ -34,13 +34,17 @@ function ProgramsSec() {
         <SwiperSlide className="Card4">
           <Link className="linkcard" to="/bodyweight" />
         </SwiperSlide>{" "}
-        <SwiperSlide className="Card5" />
-        <SwiperSlide className="Card6" />
+        <SwiperSlide className="Card5">
+          <Link to="/subscription" />
+        </SwiperSlide>
+        <SwiperSlide className="Card6">
+          <Link to="/subscription" />
+        </SwiperSlide>
       </Swiper>
       <p className="Description">
-        Want to get full access to our programs ? {"\n"} {"\n"} Click here to
-        get a look at our subscription page and chose the plan that fits you the
-        best !{" "}
+        Want to get full access to our programs ? {"\n"} {"\n"}{" "}
+        <Link to="/subscription">Click here</Link> to get a look at our
+        subscription page and chose the plan that fits you the best !{" "}
       </p>
     </div>
   );
