@@ -25,12 +25,20 @@ function Exercise({ name, video, description }) {
         >
           <Typography id="exercise-title">{name}</Typography>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails id="exercise-content">
           <video controls>
             <source src={video} type="video/mp4" />{" "}
             <track default kind="captions" />
           </video>
-          <Typography id="exercise-description">{description}</Typography>
+          <Typography id="exercise-description">
+            {description.map((e, i) => {
+              return (
+                <div id="steps">
+                  <span>{i + 1} :</span> <p>{e}</p>
+                </div>
+              );
+            })}
+          </Typography>
         </AccordionDetails>
       </Accordion>
     </div>

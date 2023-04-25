@@ -61,7 +61,8 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
             key={e.id}
             name={e.exercise_name}
             video={e.videoURL}
-            description={e.steps.join(" ")}
+            description={e.steps}
+            // description={e.steps.join(" ")}
           />
         );
       })}
