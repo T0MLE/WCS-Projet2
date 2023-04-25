@@ -50,7 +50,7 @@ function ProgramsSec() {
   );
 }
 
-// export default ProgramsSec;
+export default ProgramsSec;
 
 // import { useEffect, useRef } from "react";
 // import { Link } from "react-router-dom";
@@ -120,4 +120,4 @@ function ProgramsSec() {
 //   );
 // }
 
-export default ProgramsSec;
+// export default ProgramsSec;

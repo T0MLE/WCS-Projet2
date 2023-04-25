@@ -5,10 +5,8 @@ import Start from "./Start";
 import Day from "./Day";
 
 function Programs({ day, exercises, prog }) {
-  // console.warn(Array.from({ length: week }, (v, k) => k + 1));
-
   const arr = Array.from({ length: day }, (v, k) => k + 1);
-  console.info(prog);
+
   return (
     <div>
       <div className="arrow-title">
@@ -62,16 +60,6 @@ function Programs({ day, exercises, prog }) {
           return <Day prog={prog[index]} exercises={exercises} index={index} />;
         })}
       </div>
-
-      {/* {selectedExercises.map((e) => (
-        <Exercise
-          key={e.id}
-          name={e.exercise_name}
-          video={e.videoURL}
-          description={e.steps.join(" ")}
-        />
-      ))} */}
-      {/* <div className="stick" /> */}
     </div>
   );
 }

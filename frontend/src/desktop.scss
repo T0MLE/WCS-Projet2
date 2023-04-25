@@ -22,4 +22,20 @@
         width: 48%;
         margin-left: 2%;
     }
+
+    video {
+        width: 40%;
+    }
+    #exercise-description {
+        width: 60%;
+        display: flex ;
+        flex-direction: column;
+        justify-content: center ;
+        padding: 0 32px 0 32px;
+    }
+    #exercise-content {
+        display: flex ;
+        flex-direction: row ;
+        align-items: center;
+    }
 }

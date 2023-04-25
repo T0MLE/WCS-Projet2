@@ -6,6 +6,7 @@ import BodyPartExercises from "./components/BodyPartExercises";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Programs from "./components/Programs";
+import Subscription from "./components/Subscription";
 
 function App() {
   const [exercises, setExercises] = useState([]);
@@ -96,6 +97,7 @@ function App() {
           path="/bodyweight"
           element={<Programs exercises={exercises} day={3} prog={Pr4} />}
         />
+        <Route path="/subscription" element={<Subscription />} />
       </Routes>
       <Navbar />
     </>
