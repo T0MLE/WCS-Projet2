@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -6,6 +7,32 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 function Exercise({ name, video, description }) {
+  const videoRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
   return (
     <div className="accordion">
       <Accordion
@@ -26,9 +53,9 @@ function Exercise({ name, video, description }) {
           <Typography id="exercise-title">{name}</Typography>
         </AccordionSummary>
         <AccordionDetails id="exercise-content">
-          <video controls>
-            <source src={video} type="video/mp4" />{" "}
+          <video controls ref={videoRef}>
             <track default kind="captions" />
+            {isVisible && <source src={video} type="video/mp4" />}
           </video>
           <div id="exercise-description">
             {description.map((e, i) => {
