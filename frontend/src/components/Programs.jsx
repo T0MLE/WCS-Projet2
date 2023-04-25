@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Start from "./Start";
 
 function Programs({ week }) {
-  console.warn(Array.from({ length: week }, (v, k) => k + 1));
 
   return (
     <>
