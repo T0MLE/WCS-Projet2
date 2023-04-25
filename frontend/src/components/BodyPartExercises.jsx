@@ -9,16 +9,37 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
 
   const [filter, setFilter] = useState(false);
   const [filteredExercises, setFilteredExercises] = useState(exercises);
+  const [difficultyFilter, setDifficultyFilter] = useState(false);
 
   useEffect(() => {
+    if (
+      filter &&
+      filter !== "false" &&
+      difficultyFilter &&
+      difficultyFilter !== "false"
+    ) {
+      setFilteredExercises(
+        exercises.filter(
+          (exo) =>
+            exo.Category === filter && exo.Difficulty === difficultyFilter
+        )
+      );
+      return;
+    }
     if (filter && filter !== "false") {
       setFilteredExercises(exercises.filter((exo) => exo.Category === filter));
+      return;
+    }
+    if (difficultyFilter && difficultyFilter !== "false") {
+      setFilteredExercises(
+        exercises.filter((exo) => exo.Difficulty === difficultyFilter)
+      );
       return;
     }
     if (exercises.length) {
       setFilteredExercises(exercises);
     }
-  }, [filter, exercises.length]);
+  }, [filter, difficultyFilter, exercises.length]);
 
   handleExerciseChange(exercise);
   if (exercise === "Lowerback") handleExerciseChange("Lower back");
@@ -32,9 +53,20 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
       >
-        <option value={false}>--- choose ---</option>
+        <option value={false}>-- choose equipment--</option>
         <option value="Barbell">Barbell</option>
         <option value="Dumbbells">Dumbbells</option>
+      </select>
+      <select
+        name=""
+        id=""
+        value={difficultyFilter}
+        onChange={(e) => setDifficultyFilter(e.target.value)}
+      >
+        <option value={false}>-- choose difficulty --</option>
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
       </select>
 
       <div className="arrow-title">
