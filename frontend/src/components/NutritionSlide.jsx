@@ -33,10 +33,9 @@ function NutritionSlide({ data }) {
     </div>
   );
 }
+
 NutritionSlide.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.oneOfType([PropTypes.number, PropTypes.string])
-  ).isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
 
 export default NutritionSlide;

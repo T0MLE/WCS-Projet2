@@ -2,8 +2,6 @@ const express = require("express");
 
 const router = express.Router();
 
-// const path = require("path");
-
 const itemControllers = require("./controllers/itemControllers");
 
 const data = require("./data.json");
