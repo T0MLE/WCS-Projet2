@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Start from "./Start";
 
 function Programs() {
-
   return (
     <>
       <h2>Here are our programs</h2>
@@ -15,6 +14,3 @@ function Programs() {
 
 export default Programs;
 
-Programs.propTypes = {
-  week: PropTypes.number.isRequired,
-};
