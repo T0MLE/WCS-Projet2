@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Start from "./Start";
 
-function Programs({ week }) {
+function Programs() {
 
   return (
     <>
