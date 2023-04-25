@@ -11,7 +11,7 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
   return (
     <div className="body-part-exercises">
       <div className="arrow-title">
-        <Link to="/#swiper">
+        <Link to="/">
           <svg
             className="backarrow"
             viewBox="0 0 512 512"

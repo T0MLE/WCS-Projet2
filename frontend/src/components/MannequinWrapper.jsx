@@ -25,10 +25,6 @@ function MannequinWrapper() {
           <SwiperSlide>
             <MannequinBack className="mannequin" />
           </SwiperSlide>
-          <div className="swiper-pagination">
-            <span className="swiper-pagination-bullet">prout</span>
-            <span className="swiper-pagination-bullet">prout</span>
-          </div>
         </Swiper>
       </div>
 

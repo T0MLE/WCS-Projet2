@@ -49,6 +49,24 @@ function App() {
     [230, 134, 132, 139, 503],
   ];
 
+  const Pr2 = [
+    [67, 360, 292, 357],
+    [47, 447, 1, 376],
+    [130, 529, 131, 752],
+  ];
+
+  const Pr3 = [
+    [67, 47, 68, 2, 131],
+    [601, 206, 72, 775, 752],
+    [130, 131, 71, 357, 361],
+  ];
+
+  const Pr4 = [
+    [42, 68, 81, 277, 145, 147, 558],
+    [181, 231, 560, 783, 42, 447, 457],
+    [82, 252, 262, 280, 187, 564, 514],
+  ];
+
   return (
     <>
       <Routes>
@@ -65,6 +83,18 @@ function App() {
         <Route
           path="/bootypump"
           element={<Programs exercises={exercises} day={3} prog={Pr1} />}
+        />
+        <Route
+          path="/musclebuilding"
+          element={<Programs exercises={exercises} day={3} prog={Pr2} />}
+        />
+        <Route
+          path="/fullbody"
+          element={<Programs exercises={exercises} day={3} prog={Pr3} />}
+        />
+        <Route
+          path="/bodyweight"
+          element={<Programs exercises={exercises} day={3} prog={Pr4} />}
         />
       </Routes>
       <Navbar />

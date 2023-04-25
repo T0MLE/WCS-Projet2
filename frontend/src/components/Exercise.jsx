@@ -9,6 +9,16 @@ function Exercise({ name, video, description }) {
   return (
     <div className="accordion">
       <Accordion
+        className={
+          (window.location.pathname.slice(1) === "bootypump" &&
+            "accordion-program") ||
+          (window.location.pathname.slice(1) === "musclebuilding" &&
+            "accordion-program") ||
+          (window.location.pathname.slice(1) === "bodyweight" &&
+            "accordion-program") ||
+          (window.location.pathname.slice(1) === "fullbody" &&
+            "accordion-program")
+        }
         sx={{
           borderRadius: "16px !important",
           border: "none",
