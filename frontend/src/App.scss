@@ -96,7 +96,7 @@ header {
     border: none;
   }
 }
-.navbar {
+.navbar-mobile {
   background-color: $background-color_1;
   position: fixed;
   width: 100%;
@@ -104,8 +104,6 @@ header {
   align-items: center;
   border-top: 1px solid lightgray;
   z-index: 999;
-}
-nav {
   ul {
     display: flex;
     justify-content: space-between;
@@ -118,11 +116,25 @@ nav {
       flex-direction: column;
       color: $color_2;
       text-decoration: none;
-      font-weight: 400;
+      font-style: normal;
+      font-weight: 600;
       font-size: 10px;
+      line-height: 15px;
+      color: #666666;
     }
   }
+  img {
+  filter: invert(40%);
+  }
 }
+
+.navbar-desktop {
+  display: none;
+}
+.navbar-desktop-scrolled {
+  display: none;
+}
+
 /* ---------------------------------------------------NEWSLETTER----------------------------------------------------------------- */
 
 .sectionNews {
@@ -457,9 +469,6 @@ margin-bottom: 16px;
 .subscription-cards {
   width: 90%;
   margin: 16px auto;
-  h2 {
-    margin: 32px auto;
-  }
 }
 
 .black-button {

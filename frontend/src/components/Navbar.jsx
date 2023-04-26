@@ -1,9 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Navbar() {
+  const [navBackground, setNavBackground] = useState("navbar-desktop-scrolled");
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    if (window.location.pathname === "/" && currentScrollY < 100) {
+      setNavBackground("navbar-desktop");
+    } else {
+      setNavBackground("navbar-desktop-scrolled");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    console.warn(navBackground);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [navBackground]);
+
   return (
     <div>
-      <nav className="navbar">
+      <nav className="navbar-mobile">
         <ul>
           <li>
             <a href="/">
@@ -29,6 +48,15 @@ function Navbar() {
               Nutrition
             </a>
           </li>
+        </ul>
+      </nav>
+      <nav className={navBackground}>
+        <ul>
+          <li>WILD FITNESS CLUB</li>
+          <li>Dashboard</li>
+          <li>Programs</li>
+          <li>Exercises</li>
+          <li>Nutrition</li>
         </ul>
       </nav>
     </div>
