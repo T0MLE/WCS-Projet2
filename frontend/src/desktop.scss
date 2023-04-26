@@ -1,11 +1,12 @@
 @media screen and (min-width: 1024px) {
     .mySwiper {
-        display: none;
+        display: none; 
     }
 
     .DesktopSwiper {
         display: flex;
         justify-content: center;
+         
     }
 
     h2 {
@@ -22,7 +23,6 @@
         width: 48%;
         margin-left: 2%;
     }
-
     video {
         width: 40%;
     }
