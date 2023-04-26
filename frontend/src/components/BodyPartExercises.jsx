@@ -7,39 +7,26 @@ import Exercise from "./Exercise";
 function BodyPartExercises({ exercises, handleExerciseChange }) {
   const { exercise } = useParams();
 
-  const [filter, setFilter] = useState(false);
+  const [filter, setFilter] = useState([]);
   const [filteredExercises, setFilteredExercises] = useState(exercises);
-  const [difficultyFilter, setDifficultyFilter] = useState(false);
 
   useEffect(() => {
-    if (
-      filter &&
-      filter !== "false" &&
-      difficultyFilter &&
-      difficultyFilter !== "false"
-    ) {
-      setFilteredExercises(
-        exercises.filter(
-          (exo) =>
-            exo.Category === filter && exo.Difficulty === difficultyFilter
-        )
-      );
+    if (filter.length === 0) {
+      setFilteredExercises(exercises);
       return;
     }
     if (filter && filter !== "false") {
-      setFilteredExercises(exercises.filter((exo) => exo.Category === filter));
-      return;
-    }
-    if (difficultyFilter && difficultyFilter !== "false") {
       setFilteredExercises(
-        exercises.filter((exo) => exo.Difficulty === difficultyFilter)
+        exercises.filter((exo) => filter.some((str) => str === exo.Category))
       );
       return;
     }
     if (exercises.length) {
       setFilteredExercises(exercises);
     }
-  }, [filter, difficultyFilter, exercises.length]);
+
+    console.info(filter);
+  }, [filter, exercises.length]);
 
   handleExerciseChange(exercise);
   if (exercise === "Lowerback") handleExerciseChange("Lower back");
@@ -47,28 +34,256 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
 
   return (
     <div className="body-part-exercises">
-      <select
+      <p>Filters</p>
+      <label htmlFor="Barbell">Barbell</label>
+      <input
+        type="checkbox"
         name=""
         id=""
-        value={filter}
-        onChange={(e) => setFilter(e.target.value)}
-      >
-        <option value={false}>-- choose equipment--</option>
-        <option value="Barbell">Barbell</option>
-        <option value="Dumbbells">Dumbbells</option>
-      </select>
-      <select
+        value="Barbell"
+        onChange={(e) => {
+          if (e.target.checked) {
+            setFilter((prevState) => {
+              if (!prevState.includes("Barbell")) {
+                return [...prevState, "Barbell"];
+              }
+              return prevState;
+            });
+          } else {
+            setFilter((prevState) => {
+              const prevStateCopy = [...prevState];
+              const indexOf = prevState.indexOf("Barbell");
+              prevStateCopy.splice(indexOf, 1);
+              return prevStateCopy;
+            });
+          }
+        }}
+      />
+      <br />
+      <label htmlFor="Dumbbells">Dumbbells</label>
+      <input
+        type="checkbox"
         name=""
         id=""
-        value={difficultyFilter}
-        onChange={(e) => setDifficultyFilter(e.target.value)}
-      >
-        <option value={false}>-- choose difficulty --</option>
-        <option value="Beginner">Beginner</option>
-        <option value="Intermediate">Intermediate</option>
-        <option value="Advanced">Advanced</option>
-      </select>
-
+        value="Dumbbells"
+        onChange={(e) => {
+          if (e.target.checked) {
+            setFilter((prevState) => {
+              if (!prevState.includes("Dumbbells")) {
+                return [...prevState, "Dumbbells"];
+              }
+              return prevState;
+            });
+          } else {
+            setFilter((prevState) => {
+              const indexOf = prevState.indexOf("Dumbbells");
+              const prevStateCopy = [...prevState];
+              prevStateCopy.splice(indexOf, 1);
+              return prevStateCopy;
+            });
+          }
+        }}
+      />
+      <br />
+      <label htmlFor="Bodyweight">Bodyweight</label>
+      <input
+        type="checkbox"
+        name=""
+        id=""
+        value="Bodyweight"
+        onChange={(e) => {
+          if (e.target.checked) {
+            setFilter((prevState) => {
+              if (!prevState.includes("Bodyweight")) {
+                return [...prevState, "Bodyweight"];
+              }
+              return prevState;
+            });
+          } else {
+            setFilter((prevState) => {
+              const indexOf = prevState.indexOf("Bodyweight");
+              const prevStateCopy = [...prevState];
+              prevStateCopy.splice(indexOf, 1);
+              return prevStateCopy;
+            });
+          }
+        }}
+      />
+      <br />
+      <label htmlFor="Kettlebells">Kettlebells</label>
+      <input
+        type="checkbox"
+        name=""
+        id=""
+        value="Kettlebells"
+        onChange={(e) => {
+          if (e.target.checked) {
+            setFilter((prevState) => {
+              if (!prevState.includes("Kettlebells")) {
+                return [...prevState, "Kettlebells"];
+              }
+              return prevState;
+            });
+          } else {
+            setFilter((prevState) => {
+              const indexOf = prevState.indexOf("Kettlebells");
+              const prevStateCopy = [...prevState];
+              prevStateCopy.splice(indexOf, 1);
+              return prevStateCopy;
+            });
+          }
+        }}
+      />
+      <br />
+      <label htmlFor="Stretches">Stretches</label>
+      <input
+        type="checkbox"
+        name=""
+        id=""
+        value="Stretches"
+        onChange={(e) => {
+          if (e.target.checked) {
+            setFilter((prevState) => {
+              if (!prevState.includes("Stretches")) {
+                return [...prevState, "Stretches"];
+              }
+              return prevState;
+            });
+          } else {
+            setFilter((prevState) => {
+              const indexOf = prevState.indexOf("Stretches");
+              const prevStateCopy = [...prevState];
+              prevStateCopy.splice(indexOf, 1);
+              return prevStateCopy;
+            });
+          }
+        }}
+      />
+      <br />
+      <label htmlFor="Cables">Cables</label>
+      <input
+        type="checkbox"
+        name=""
+        id=""
+        value="Cables"
+        onChange={(e) => {
+          if (e.target.checked) {
+            setFilter((prevState) => {
+              if (!prevState.includes("Cables")) {
+                return [...prevState, "Cables"];
+              }
+              return prevState;
+            });
+          } else {
+            setFilter((prevState) => {
+              const indexOf = prevState.indexOf("Cables");
+              const prevStateCopy = [...prevState];
+              prevStateCopy.splice(indexOf, 1);
+              return prevStateCopy;
+            });
+          }
+        }}
+      />
+      <br />
+      <label htmlFor="Band">Band</label>
+      <input
+        type="checkbox"
+        name=""
+        id=""
+        value="Band"
+        onChange={(e) => {
+          if (e.target.checked) {
+            setFilter((prevState) => {
+              if (!prevState.includes("Band")) {
+                return [...prevState, "Band"];
+              }
+              return prevState;
+            });
+          } else {
+            setFilter((prevState) => {
+              const indexOf = prevState.indexOf("Band");
+              const prevStateCopy = [...prevState];
+              prevStateCopy.splice(indexOf, 1);
+              return prevStateCopy;
+            });
+          }
+        }}
+      />
+      <br />
+      <label htmlFor="Plate">Plate</label>
+      <input
+        type="checkbox"
+        name=""
+        id=""
+        value="Plate"
+        onChange={(e) => {
+          if (e.target.checked) {
+            setFilter((prevState) => {
+              if (!prevState.includes("Plate")) {
+                return [...prevState, "Plate"];
+              }
+              return prevState;
+            });
+          } else {
+            setFilter((prevState) => {
+              const indexOf = prevState.indexOf("Plate");
+              const prevStateCopy = [...prevState];
+              prevStateCopy.splice(indexOf, 1);
+              return prevStateCopy;
+            });
+          }
+        }}
+      />
+      <br />
+      <label htmlFor="TRX">TRX</label>
+      <input
+        type="checkbox"
+        name=""
+        id=""
+        value="TRX"
+        onChange={(e) => {
+          if (e.target.checked) {
+            setFilter((prevState) => {
+              if (!prevState.includes("TRX")) {
+                return [...prevState, "TRX"];
+              }
+              return prevState;
+            });
+          } else {
+            setFilter((prevState) => {
+              const indexOf = prevState.indexOf("TRX");
+              const prevStateCopy = [...prevState];
+              prevStateCopy.splice(indexOf, 1);
+              return prevStateCopy;
+            });
+          }
+        }}
+      />
+      <br />
+      <label htmlFor="Yoga">Yoga</label>
+      <input
+        type="checkbox"
+        name=""
+        id=""
+        value="Yoga"
+        onChange={(e) => {
+          if (e.target.checked) {
+            setFilter((prevState) => {
+              if (!prevState.includes("Yoga")) {
+                return [...prevState, "Yoga"];
+              }
+              return prevState;
+            });
+          } else {
+            setFilter((prevState) => {
+              const indexOf = prevState.indexOf("Yoga");
+              const prevStateCopy = [...prevState];
+              prevStateCopy.splice(indexOf, 1);
+              return prevStateCopy;
+            });
+          }
+        }}
+      />
       <div className="arrow-title">
         <Link to="/">
           <svg
