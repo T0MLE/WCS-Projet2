@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import "./desktop.scss";
 import { Route, Routes } from "react-router-dom";
-import BodyPartExercises from "./components/BodyPartExercises";
-import Home from "./components/Home";
+import BodyPartExercises from "./pages/BodyPartExercises";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -42,10 +42,23 @@ function App() {
     ]);
   }, [filteredExercises]);
 
+  const [nutrition, setNutrition] = useState([]);
+  useEffect(() => {
+    fetch("http://127.0.0.1:3000/data")
+      .then((response) => response.json())
+      .then((result) => {
+        setNutrition(result.slice(0, 10));
+      })
+      .catch((error) => console.error(error));
+    return () => {
+      controller.abort();
+    };
+  }, []);
+
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home data={nutrition} />} />
         <Route
           path="/:exercise"
           element={

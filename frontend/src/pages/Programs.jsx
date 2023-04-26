@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Start from "./Start";
+import Start from "../components/Start";
 
 function Programs({ week }) {
   console.warn(Array.from({ length: week }, (v, k) => k + 1));
