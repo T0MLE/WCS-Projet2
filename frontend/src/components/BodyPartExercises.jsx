@@ -119,10 +119,10 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
           <Exercise
             key={e.id}
             name={e.exercise_name}
-            video={e.videoURL}
-            description={e.steps.join(" ")}
             category={e.Category}
             difficulty={e.Difficulty}
+            video={e.videoURL[0]}
+            description={e.steps}
           />
         );
       })}

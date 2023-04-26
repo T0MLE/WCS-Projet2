@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -6,6 +7,32 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 function Exercise({ name, video, description }) {
+  const videoRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => {
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
+      }
+    };
+  }, []);
   return (
     <div className="accordion">
       <Accordion
@@ -25,12 +52,20 @@ function Exercise({ name, video, description }) {
         >
           <Typography id="exercise-title">{name}</Typography>
         </AccordionSummary>
-        <AccordionDetails>
-          <video controls>
-            <source src={video} type="video/mp4" />{" "}
+        <AccordionDetails id="exercise-content">
+          <video controls ref={videoRef}>
             <track default kind="captions" />
+            {isVisible && <source src={video} type="video/mp4" />}
           </video>
-          <Typography id="exercise-description">{description}</Typography>
+          <div id="exercise-description">
+            {description.map((e, i) => {
+              return (
+                <div id="steps">
+                  <span>{i + 1} :</span> <p>{e}</p>
+                </div>
+              );
+            })}
+          </div>
         </AccordionDetails>
       </Accordion>
     </div>
@@ -40,7 +75,7 @@ function Exercise({ name, video, description }) {
 Exercise.propTypes = {
   name: PropTypes.string.isRequired,
   video: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Exercise;

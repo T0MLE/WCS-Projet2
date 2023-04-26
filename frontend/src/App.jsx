@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import BodyPartExercises from "./components/BodyPartExercises";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import Subscription from "./components/Subscription";
 
 function App() {
   const [exercises, setExercises] = useState([]);
@@ -55,6 +56,7 @@ function App() {
             />
           }
         />
+        <Route path="/subscription" element={<Subscription />} />
       </Routes>
       <Navbar />
     </>
