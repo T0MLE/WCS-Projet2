@@ -4,7 +4,7 @@ function Subscription() {
   return (
     <div className="subscription-cards">
       <div>
-        <h2>Choose your subscription</h2>
+        <h2>Chose your subscription</h2>
         <p>
           Get access to all our workout programs and an endless list of healthy
           recipes to get in the shape of your life.

@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import Exercise from "./Exercise";
 
 function BodyPartExercises({ exercises, handleExerciseChange }) {
+  const nav = useNavigate();
   const { exercise } = useParams();
   handleExerciseChange(exercise);
   if (exercise === "Lowerback") handleExerciseChange("Lower back");
@@ -11,7 +12,7 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
   return (
     <div className="body-part-exercises">
       <div className="arrow-title">
-        <Link to="/">
+        <Link to="/" onClick={() => nav(-1)}>
           <svg
             className="backarrow"
             viewBox="0 0 512 512"
@@ -62,7 +63,6 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
             name={e.exercise_name}
             video={e.videoURL[0]}
             description={e.steps}
-            // description={e.steps.join(" ")}
           />
         );
       })}

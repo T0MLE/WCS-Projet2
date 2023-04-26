@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
-function Navbar() {
+function Navbar({ isTransparent }) {
   const [navBackground, setNavBackground] = useState("navbar-desktop-scrolled");
-
   const handleScroll = () => {
-    const currentScrollY = window.scrollY;
+    const currentScrollY = window.scrollY || 0;
     if (window.location.pathname === "/" && currentScrollY < 100) {
       setNavBackground("navbar-desktop");
     } else {
@@ -14,11 +14,20 @@ function Navbar() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    console.warn(navBackground);
+    handleScroll();
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [navBackground]);
+  }, []);
+
+  useEffect(() => {
+    if (isTransparent) {
+      setNavBackground("navbar-desktop");
+      return;
+    }
+
+    setNavBackground("navbar-desktop-scrolled");
+  }, [isTransparent]);
 
   return (
     <div>
@@ -64,3 +73,7 @@ function Navbar() {
 }
 
 export default Navbar;
+
+Navbar.propTypes = {
+  isTransparent: PropTypes.bool.isRequired,
+};

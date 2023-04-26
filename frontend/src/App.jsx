@@ -44,22 +44,37 @@ function App() {
   }, [filteredExercises]);
 
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/:exercise"
-          element={
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <Home /> <Navbar isTransparent />
+          </>
+        }
+      />
+      <Route
+        path="/:exercise"
+        element={
+          <>
             <BodyPartExercises
               exercises={uniqueEx}
               handleExerciseChange={setFilter}
             />
-          }
-        />
-        <Route path="/subscription" element={<Subscription />} />
-      </Routes>
-      <Navbar />
-    </>
+            <Navbar />
+          </>
+        }
+      />
+
+      <Route
+        path="/subscription"
+        element={
+          <>
+            <Subscription /> <Navbar />
+          </>
+        }
+      />
+    </Routes>
   );
 }
 

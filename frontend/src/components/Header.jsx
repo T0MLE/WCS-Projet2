@@ -6,12 +6,14 @@ function Header() {
     <div>
       <header>
         <h1>Wild Fitness Club</h1>
-        <h2>
-          Get into the <br /> fitness journey
-        </h2>
-        <Link to="/subscription">
-          <button type="button">Join the team</button>
-        </Link>
+        <div>
+          <h2>
+            Get into the <br /> fitness journey
+          </h2>
+          <Link to="/subscription">
+            <button type="button">Join the team</button>
+          </Link>
+        </div>
       </header>
     </div>
   );
