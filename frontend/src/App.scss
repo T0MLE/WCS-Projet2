@@ -249,12 +249,17 @@ nav {
 .Description {
   font-size: 4vw;
   font-family: $font-family_1;
-  margin: 40px 0;
   a {
     display: initial;
     all: unset
     
   }
+}
+
+.weekstyle {
+  font-family: "Poppins";
+  font-size: 24px;
+  margin: 50px 30px 20px;
 }
 
 
@@ -342,19 +347,35 @@ nav {
 }
 
 
-// .stick {
-//   margin-bottom: 100%;
-// }
-
-// .accordion {
-//   margin-bottom: 10px;
-// }
-
-// .test {
-//   margin-bottom: 70px;
+.programcontainer {
+  margin-bottom: 70px;
   
-// }
+}
 
+.program {
+  .arrow-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+  margin: 16px auto;
+}
+.backarrow {
+	height: 32px;
+	width: 32px;
+  margin-right: 16px;
+}
+
+}
+
+
+.programimage {
+  width: 90%;
+  margin: auto;
+  img {
+    width: 100%;
+  }
+}
 /* ---------------------------------------------------MANNEQUIN SECTION HOMEPAGE----------------------------------------------------------------- */
 
 .DesktopSwiper {
@@ -441,17 +462,28 @@ video {
   font-size: 16px !important;
   line-height: 24px !important;
   text-align: justify !important;
-
+  
 }
 .body-part-exercises {
-	padding-bottom: 65px;
+  padding-bottom: 65px;
 }
 
+.body-part-exercises {
+  .arrow-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  // width: 90%;
+  margin: 16px 16px;
+
+}
 .backarrow {
 	height: 32px;
 	width: 32px;
   margin-right: 16px;
 }
+}
+
 
 a {
 	display: flex;
@@ -459,13 +491,7 @@ a {
   list-style: none;
 }
 
-.arrow-title {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	width: 90%;
-	margin: 16px auto;
-}
+
 
 .muscle-section-title {
   margin: 32px 16px;
@@ -508,6 +534,8 @@ flex-direction: row;
   &:first-of-type {
     margin-top: 40px;
   }
+
+ 
   .subscription-price {
     font-style: normal;
 font-weight: 600;
@@ -528,9 +556,21 @@ margin-bottom: 16px;
 .subscription-cards {
   width: 90%;
   margin: 16px auto;
-  h2 {
-    margin: 32px auto;
+  .backarrow {
+    height: 32px;
+    width: 32px;
+  
   }
+
+  // .backarrow {
+  //   height: 75px;
+  
+  .arrow-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    }
+  
 }
 
 .black-button {

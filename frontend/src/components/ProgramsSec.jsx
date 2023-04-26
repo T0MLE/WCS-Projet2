@@ -1,10 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
-
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
-
 import { Pagination } from "swiper";
+import Start from "./Start";
 
 function ProgramsSec() {
   return (
@@ -13,7 +12,9 @@ function ProgramsSec() {
       <p className="Description">
         {" "}
         Do you want to reach your fitness goals ? {"\n"} {"\n"} We have selected
-        the best programs made by our coaches to bring you to the next level !{" "}
+        the best programs made by our coaches to bring you to the next level !
+        Thousands of people have already changed their lives thanks to our
+        application. Why not yours ?
       </p>
       <Swiper
         spaceBetween={30}
@@ -35,17 +36,20 @@ function ProgramsSec() {
           <Link className="linkcard" to="/bodyweight" />
         </SwiperSlide>{" "}
         <SwiperSlide className="Card5">
-          <Link to="/subscription" />
+          <Link className="linkcard" to="/subscription" />
         </SwiperSlide>
         <SwiperSlide className="Card6">
-          <Link to="/subscription" />
+          <Link className="linkcard" to="/subscription" />
         </SwiperSlide>
       </Swiper>
       <p className="Description">
-        Want to get full access to our programs ? {"\n"} {"\n"}{" "}
-        <Link to="/subscription">Click here</Link> to get a look at our
-        subscription page and chose the plan that fits you the best !{" "}
+        Want to get full access to our programs ? {"\n"} {"\n"} Click below to
+        get a look at our subscription page and chose the plan that fits you the
+        best !{" "}
       </p>
+      <Link className="linkcard" to="/subscription">
+        <Start content="Click Here" />
+      </Link>
     </div>
   );
 }

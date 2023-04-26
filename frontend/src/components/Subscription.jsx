@@ -1,9 +1,16 @@
+import { Link } from "react-router-dom";
 import SubscriptionCard from "./SubscriptionCard";
+import backarrow from "../assets/back-arrow.svg";
 
 function Subscription() {
   return (
     <div className="subscription-cards">
-      <h2>Choose your subscription</h2>
+      <div className="arrow-title">
+        <Link to="/">
+          <img className="backarrow" src={backarrow} alt="backarrow" />
+        </Link>{" "}
+        <h2>Chose your subscription</h2>
+      </div>
 
       <p>
         Get access to all our workout programs and an endless list of healthy

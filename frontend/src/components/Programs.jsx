@@ -1,65 +1,70 @@
-import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Start from "./Start";
 import Day from "./Day";
+import bp1 from "../assets/bp1.svg";
+import mb1 from "../assets/mb1.svg";
+import fb1 from "../assets/fb1.svg";
+import bw1 from "../assets/bw1.svg";
+import backarrow from "../assets/back-arrow.svg";
 
 function Programs({ day, exercises, prog }) {
-  const arr = Array.from({ length: day }, (v, k) => k + 1);
+  const dayArr = Array.from({ length: day }, (v, k) => k + 1);
+  const weekArr = Array.from({ length: 12 }, (v, k) => k + 1);
 
-  return (
-    <div>
-      <div className="arrow-title">
-        <Link to="/">
-          <svg
-            className="backarrow"
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="#000000"
-          >
-            <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-            <g
-              id="SVGRepo_tracerCarrier"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <g id="SVGRepo_iconCarrier">
-              <title>ionicons-v5-a</title>
-              <polyline
-                points="244 400 100 256 244 112"
-                style={{
-                  fill: "none",
-                  stroke: "black",
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  strokeWidth: 48,
-                }}
-              />
-              <line
-                x1="120"
-                y1="256"
-                x2="412"
-                y2="256"
-                style={{
-                  fill: "none",
-                  stroke: "black",
-                  strokeLinecap: "round",
-                  strokeLinejoin: "round",
-                  strokeWidth: 48,
-                }}
-              />
-            </g>
-          </svg>
-        </Link>
-        <h2>Here are our programs</h2>
-      </div>
-      <p>Start here</p>
-      <Start content="Start this program" />
-      <div className="test">
-        {arr.map((e, index) => {
+  // const monTruc = ;
+  const svg = () => {
+    if (window.location.pathname.slice(1) === "bootypump") {
+      return <img src={bp1} alt="bootypump" />;
+    }
+    if (window.location.pathname.slice(1) === "bodyweight") {
+      return <img src={bw1} alt="bodyweight" />;
+    }
+    if (window.location.pathname.slice(1) === "fullbody") {
+      return <img src={fb1} alt="fullbody" />;
+    }
+    if (window.location.pathname.slice(1) === "musclebuilding") {
+      return <img src={mb1} alt="musclebuilding" />;
+    }
+    return null;
+  };
+
+  const monAutreTruc = weekArr.map((a, i) => {
+    return (
+      <div>
+        <p className="weekstyle">Week {i + 1}</p>
+        {dayArr.map((e, index) => {
           return <Day prog={prog[index]} exercises={exercises} index={index} />;
         })}
       </div>
+    );
+  });
+
+  // {arr.map((e, index) => {
+  //   return <Day prog={prog[index]} exercises={exercises} index={index} />;
+  // })}
+
+  return (
+    <div className="program">
+      <div className="arrow-title">
+        <Link to="/">
+          <img className="backarrow" src={backarrow} alt="backarrow" />
+        </Link>
+        <h2>Our programs</h2>
+      </div>
+
+      <div className="programimage">
+        {/* {<Route path="/bootypump" /> || <Route path="/musclebuilding" /> || (
+          <Route path="/bodyweight" />
+        ) || <Route path="/fullbody" /> ? (
+          <Start content="Start this program" />
+        ) : (<Link className="linkcard" to="/subscription">
+          <Start content="Start this program" />
+        </Link>)} */}
+        <div>{svg()}</div>
+        <Start content="Start this program" />
+      </div>
+      <div className="programcontainer">{monAutreTruc}</div>
     </div>
   );
 }
