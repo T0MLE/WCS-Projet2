@@ -390,6 +390,7 @@ video {
   flex-direction: column;
   align-items: center;
   margin-bottom: 4px;
+  width: 100%;
 }
 
 #exercise-title {
@@ -411,6 +412,9 @@ video {
 }
 .body-part-exercises {
 	padding-bottom: 65px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .backarrow {
@@ -503,4 +507,17 @@ display: flex;
 justify-content: center;
 align-items: center;
 margin: 32px auto 8px auto;
+}
+
+.searchbar {
+  all:unset;
+  border-radius: 16px;
+  border: 1px solid grey;
+  padding: 4px 0px 4px 40px;
+  width: 300px;
+  margin-bottom: 16px;
+  background-image: url("./assets/loupe.png");
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
 }
