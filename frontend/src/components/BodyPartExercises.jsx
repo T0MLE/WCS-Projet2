@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Exercise from "./Exercise";
 
@@ -8,6 +9,10 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
   handleExerciseChange(exercise);
   if (exercise === "Lowerback") handleExerciseChange("Lower back");
   if (exercise === "Midback") handleExerciseChange("Mid back");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="body-part-exercises">

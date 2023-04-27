@@ -8,7 +8,7 @@ import { Pagination } from "swiper";
 
 function ProgramsSec() {
   return (
-    <div className="ProgramSection">
+    <div className="ProgramSection" id="prog">
       <h2 className="ProgramsTit">Explore our programs</h2>
       <p className="Description">
         {" "}
