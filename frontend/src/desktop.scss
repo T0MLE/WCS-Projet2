@@ -9,7 +9,7 @@
          
     }
 
-    h2 {
+    .muscle-section-title {
         font-size: 40px;
         margin-left: 32px;
     }
@@ -38,4 +38,155 @@
         flex-direction: row ;
         align-items: center;
     }
+
+
+.ProgramsSec {
+    display: none;
+    height:0px
+}
+
+.ProgramSection {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    max-width: 150rem;
+    margin: 30px;
+}
+.programtext, .Description, #suscriptionprogsec {
+    font-size: 1.3vw;
+    grid-column: 1/span 4;
+}
+#suscriptionprogsec {
+    display: none;
+}
+#suscriptionprogsec2 {
+    
+}
+.descriptiondesk {
+    font-size: 1.3vw;
+    display: block;
+}
+#descriptiondesk {
+    font-size: 0;
+}
+.program{
+    .arrow-title{
+        padding-top: 80px;
+    }
+}
+.programimage{
+    display: flex;
+    flex-direction: column;
+    img{
+        width: 50%;
+    }
+    
+}
+.progpic {
+    display: flex;
+    justify-content: center;
+}
+
+.imagegalery {
+    display: grid;
+        grid-column: 6/span 7;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(10,1fr);
+    grid-gap: 1rem;
+    
+   
+    .cardbp1 {
+        grid-column: 3/span 1;
+    grid-row: 1/span 4;
+    // background-image: url("./assets/bp1.svg") ;
+    // background-position: left ;
+  background-repeat: no-repeat ;
+  grid-auto-columns:min-content;
+  background-size: contain ;
+  display: inline-block ;
+  transition: transform .5s;
+    }
+    .cardbp1:hover {
+            transform: scale(1.2); 
+    }
+    .cardbw1 {
+        grid-column: 1/span 1;
+        grid-row: 2/span 4;
+    // background-image: url("./assets/bw1.svg") ;
+    // background-position: right;
+  background-repeat: no-repeat ;
+  background-size:contain ;
+  display: inline-block ;
+  transition: transform .5s;
+}
+.cardbw1:hover {
+        transform: scale(1.2); 
+
+    }
+    
+    .cardmb1 {
+        grid-column: 2/span 1;
+        grid-row: 3/span 4;
+    // background-image: url("./assets/mb1.svg") ;
+    // background-position: center ;
+  background-repeat: no-repeat ;
+  background-size: contain ;
+  display: inline-block ;
+  transition: transform .5s;
+}
+.cardmb1:hover {
+        transform: scale(1.2); 
+
+    }
+    .cardfb1 {
+        grid-column: 1/span 1;
+        grid-row: 6/span 4;
+    // background-image: url("./assets/fb1.svg") ;
+    // background-position: right ;
+  background-repeat: no-repeat ;
+  background-size: contain ;
+  display: inline-block ;
+  transition: transform .5s;
+}
+.cardfb1:hover {
+        transform: scale(1.2); 
+
+    }
+    .cardsm1 {
+        grid-column: 2/span 1;
+    grid-row: 7/span 4;
+    // background-image: url("./assets/sm1lock.svg") ;
+    // background-position: center ;
+  background-repeat: no-repeat ;
+  background-size: contain ;
+  display: inline-block ;
+  transition: transform .5s;
+}
+.cardsm1:hover {
+        transform: scale(1.2); 
+
+    }
+    .cardct1 {
+        grid-column: 3/span 1;
+    grid-row: 5/span 4;
+    // background-image: url("./assets/ct1lock.svg") ;
+    // background-position:left ;
+  background-repeat:no-repeat;
+  background-size: contain ;
+  display: inline-block ;
+  transition: transform .5s;
+}
+.cardct1:hover {
+        transform: scale(1.2); 
+
+    }
+
+}
+
+    
+ 
+.ProgramsTit {
+    font-size: 3vw;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 50px;
+}
 }

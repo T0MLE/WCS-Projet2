@@ -61,7 +61,7 @@ function Programs({ day, exercises, prog }) {
         ) : (<Link className="linkcard" to="/subscription">
           <Start content="Start this program" />
         </Link>)} */}
-        <div>{svg()}</div>
+        <div className="progpic">{svg()}</div>
         <Start content="Start this program" />
       </div>
       <div className="programcontainer">{monAutreTruc}</div>
