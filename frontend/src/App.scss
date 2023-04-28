@@ -156,7 +156,7 @@ header {
 
 .sectionNews {
   background-image: url(./assets/meuf2.png);
-  background-position: left;
+  background-position: center;
   background-size: cover;
   height: 650px;
   padding-top: 50px;
@@ -212,9 +212,12 @@ header {
   justify-content: space-between;
   padding-top: 10px;
   align-items: center;
-  padding-bottom: 80px;
+  // padding-bottom: 80px;
   margin: 0 20px;
+  flex-direction: row;
+  align-content: flex-end;
 }
+
 .footerLogo {
   font-size: 7px;
   width: 20%;
@@ -247,6 +250,163 @@ header {
     padding-left: 10px;
   }
 }
+
+/* ---------------------------------------------------PROGRAM SECTION HOMEPAGE----------------------------------------------------------------- */
+
+.ProgramSection {
+  margin: 10px;
+  padding: 15px;
+}
+.ProgramsSec {
+    display: flex;
+  width: 100%;
+  height: 50vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.ProgramsTit {
+  font-size: 6vw;
+  font-family: $font-family_1;
+  margin-bottom: 30px;
+}
+.Description {
+  font-size: 4vw;
+  font-family: $font-family_1;
+  a {
+    display: initial;
+    all: unset
+    
+  }
+}
+
+.weekstyle {
+  font-family: "Poppins";
+  font-size: 24px;
+  margin: 50px 30px 20px;
+}
+
+
+/* ---------------------------------------------------PROGRAM COMPONENT----------------------------------------------------------------- */
+
+.Card1 {
+  height: 90vw;
+  font-size: 0px;
+  background-image: url("./assets/bp1.svg") !important;
+  background-position: center ;
+  background-repeat: no-repeat ;
+  background-size: contain ;
+  border-radius: 40px ;
+  display: inline-block ;
+}
+
+.Card2 {
+  height: 90vw;
+  font-size: 0px;
+  background-image: url("./assets/mb1.svg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 40px;
+  display: inline-block;
+}
+.Card3 {
+  height: 90vw;
+  font-size: 0px;
+  background-image: url("./assets/fb1.svg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 40px;
+  display: inline-block;
+}
+.Card4 {
+  height: 90vw;
+  font-size: 0px;
+  background-image: url("./assets/bw1.svg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 40px;
+  display: inline-block;
+}
+.Card5 {
+  height: 90vw;
+  font-size: 0px;
+  background-image: url("./assets/sm1lock.svg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 40px;
+  display: inline-block;
+}
+.Card6 {
+  height: 90vw;
+  font-size: 0px;
+  background-image: url("./assets/ct1lock.svg") !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 40px;
+  display: inline-block;
+}
+
+.css-zcgv4s-MuiPaper-root-MuiAccordion-root.Mui-expanded:last-of-type {
+  margin-bottom: 10px !important;
+}
+
+
+.programcontainer {
+  margin-bottom: 70px;
+  
+}
+
+.program {
+  .arrow-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90%;
+  margin: 16px auto;
+}
+.backarrow {
+	height: 32px;
+	width: 32px;
+  margin-right: 16px;
+}
+
+}
+
+
+.programimage {
+  width: 90%;
+  margin: auto;
+  img {
+    width: 100%;
+  }
+}
+/* ---------------------------------------------------MANNEQUIN SECTION HOMEPAGE----------------------------------------------------------------- */
+
+.DesktopSwiper {
+  display: none;
+}
+
+h2 {
+  font-family: "Poppins";
+  font-size: 24px;
+  margin: 8px 0;
+}
+
+.mannequin-wrapper {
+  padding-top: 40px;
+}
+/* ---------------------------------------------------MANNEQUIN COMPONENT----------------------------------------------------------------- */
+
 .body-map__body {
   width: 100%;
   height: calc(100vh - 200px);
@@ -267,103 +427,12 @@ header {
   background-color: $background-color_1;
   padding-top: 40px;
 }
-.ProgramSection {
-  margin: 10px;
-  padding: 15px;
-}
-.ProgramsSec {
-  display: flex;
-  width: 100%;
-  height: 50vh;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  white-space: nowrap;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
 
 .DesktopSwiper {
   display: none;
 }
 .mannequin-wrapper {
   padding-top: 40px;
-}
-h2 {
-  font-family: $font-family_1;
-  font-size: 24px;
-}
-.ProgramsTit {
-  font-size: 6vw;
-  font-family: $font-family_1;
-  margin-bottom: 30px;
-}
-.Description {
-  font-size: 4vw;
-  font-family: $font-family_1;
-  margin-bottom: 50px;
-}
-.Card1 {
-  display: inline-block;
-  flex-basis: 100%;
-  height: 100%;
-  border-radius: 40px;
-  scroll-snap-align: center;
-  margin-right: 50px;
-  background-image: url("./assets/bp.png");
-  flex-shrink: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  &:last-child {
-    margin-right: 0;
-  }
-}
-.Card2 {
-  display: inline-block;
-  flex-basis: 100%;
-  height: 100%;
-  border-radius: 40px;
-  scroll-snap-align: center;
-  margin-right: 50px;
-  background-image: url("./assets/bt.png");
-  flex-shrink: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.Card3 {
-  display: inline-block;
-  flex-basis: 100%;
-  height: 100%;
-  border-radius: 40px;
-  scroll-snap-align: center;
-  margin-right: 50px;
-  background-image: url("./assets/mb.png");
-  flex-shrink: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.Card4 {
-  display: inline-block;
-  flex-basis: 100%;
-  height: 100%;
-  border-radius: 40px;
-  scroll-snap-align: center;
-  margin-right: 50px;
-  background-image: url("./assets/st.png");
-  flex-shrink: 0;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.Card {
-  img {
-    border-radius: 20px;
-  }
 }
 
 .div-exercise {
@@ -408,20 +477,30 @@ video {
   font-size: 16px !important;
   line-height: 24px !important;
   text-align: justify !important;
-
+  
 }
 .body-part-exercises {
 	padding-bottom: 65px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
+.body-part-exercises {
+  .arrow-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  // width: 90%;
+  margin: 16px 16px;
+
+}
 .backarrow {
 	height: 32px;
 	width: 32px;
   margin-right: 16px;
 }
+}
+
 
 a {
 	display: flex;
@@ -429,13 +508,7 @@ a {
   list-style: none;
 }
 
-.arrow-title {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	width: 90%;
-	margin: 16px auto;
-}
+
 
 .muscle-section-title {
   margin: 32px 16px;
@@ -443,6 +516,15 @@ a {
 
 .mySwiper {
   margin-bottom: 32px;
+}
+
+.linkcard {
+  height: 100%;
+}
+
+.accordion-program {
+background-color: #f5f8fa !important;
+width: 99% !important;
 }
 
 #steps {
@@ -469,6 +551,8 @@ flex-direction: row;
   &:first-of-type {
     margin-top: 40px;
   }
+
+ 
   .subscription-price {
     font-style: normal;
 font-weight: 600;
@@ -489,6 +573,19 @@ margin-bottom: 16px;
 .subscription-cards {
   width: 90%;
   margin: 16px auto;
+
+  .backarrow {
+    height: 32px;
+    width: 32px;
+  
+  }
+  
+  .arrow-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    }
+  
 }
 
 .black-button {
@@ -508,8 +605,6 @@ justify-content: center;
 align-items: center;
 margin: 32px auto 8px auto;
 }
-
-
 
 .filter-search {
   display: flex;

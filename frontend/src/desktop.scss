@@ -1,11 +1,12 @@
 @media screen and (min-width: 1024px) {
     .mySwiper {
-        display: none;
+        display: none; 
     }
 
     .DesktopSwiper {
         display: flex;
         justify-content: center;
+         
     }
 
     #mannequin-front {
@@ -18,10 +19,10 @@
         width: 48%;
         margin-left: 2%;
     }
-
     .body-part-exercises{
         padding-top: 70px;
     }
+
     video {
         width: 40%;
     }
