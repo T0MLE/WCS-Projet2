@@ -490,8 +490,7 @@ video {
   display: flex;
   flex-direction: row;
   align-items: center;
-  // width: 90%;
-  margin: 16px 16px;
+  margin: 8px 16px;
 
 }
 .backarrow {
@@ -610,7 +609,7 @@ margin: 32px auto 8px auto;
   display: flex;
   align-items: center;
   width: 90%;
-  margin-bottom: 16px;
+  margin: 0px auto 16px auto;
   .searchbar {
     all:unset;
     border-radius: 16px;
