@@ -12,7 +12,7 @@ function MannequinWrapper() {
   return (
     <>
       <h2 className="muscle-section-title">Find an exercise</h2>
-      <div className="mySwiper">
+      <div className="mySwiper" id="swiper">
         <Swiper
           spaceBetween={30}
           pagination
