@@ -509,15 +509,74 @@ align-items: center;
 margin: 32px auto 8px auto;
 }
 
-.searchbar {
-  all:unset;
-  border-radius: 16px;
-  border: 1px solid grey;
-  padding: 4px 0px 4px 40px;
-  width: 300px;
+
+
+.filter-search {
+  display: flex;
+  align-items: center;
+  width: 90%;
   margin-bottom: 16px;
-  background-image: url("./assets/loupe.png");
-  background-size: 18px;
-  background-repeat: no-repeat;
-  background-position: 10px center;
+  .searchbar {
+    all:unset;
+    border-radius: 16px;
+    border: 1px solid grey;
+    padding: 4px 0px 4px 40px;
+    width: 70%;
+    background-image: url("./assets/loupe.png");
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+  }
+.btn-filter{ 
+  all: unset;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  padding: 8px;
+  background-color: rgba(229,229,234,.3);
+  width: 30%;
+  margin-right: 24px;
+  span{
+  font-family: $font-family_1;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  }
+  img {
+  width: 16px;
+  margin-right: 16px;
+  
+}}}
+
+
+.fi {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr 4fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  align-items: center;
+  background-color: white;
+  width: 90%;
+  height: 0px;
+  border-radius: 16px;
+  border: none;
+
+  label, input {
+    opacity: 0;
+  }
+
+}
+.fiopen {
+  height: 200px;
+  margin-bottom: 16px;
+  border: 1px solid #e8e8e8;
+  padding: 16px 8px;
+
+
+  label, input {
+    opacity:1;
+  }
 }

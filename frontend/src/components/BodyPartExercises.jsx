@@ -2,14 +2,51 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Exercise from "./Exercise";
+import imgFilter from "../assets/settings-sliders.png";
 
 function BodyPartExercises({ exercises, handleExerciseChange }) {
+  const categories = [
+    "Barbell",
+    "Dumbbells",
+    "Bodyweight",
+    "Kettlebells",
+    "Stretches",
+    "Yoga",
+    "Plate",
+    "TRX",
+    "Band",
+    "Cables",
+  ];
+
   const nav = useNavigate();
   const { exercise } = useParams();
   handleExerciseChange(exercise);
   if (exercise === "Lowerback") handleExerciseChange("Lower back");
   if (exercise === "Midback") handleExerciseChange("Mid back");
   const [search, setSearch] = useState("");
+  const [filter, setFilter] = useState([]);
+  const [filteredExercises, setFilteredExercises] = useState(exercises);
+
+  const [filterOpen, setFilterOpen] = useState(false);
+  const openFilter = () => {
+    setFilterOpen(!filterOpen);
+  };
+
+  useEffect(() => {
+    if (filter.length === 0) {
+      setFilteredExercises(exercises);
+      return;
+    }
+    if (filter && filter !== "false") {
+      setFilteredExercises(
+        exercises.filter((exo) => filter.some((str) => str === exo.Category))
+      );
+      return;
+    }
+    if (exercises.length) {
+      setFilteredExercises(exercises);
+    }
+  }, [filter, exercises.length]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -62,14 +99,52 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
 
         <h2>{exercise} exercises</h2>
       </div>
-      <input
-        className="searchbar"
-        type="text"
-        onChange={(e) => setSearch(e.target.value)}
-        value={search}
-        placeholder="Search your exercise"
-      />
-      {exercises
+      <div className="filter-search">
+        <button type="button" className="btn-filter" onClick={openFilter}>
+          <img src={imgFilter} alt="" /> <span>Filters</span>
+        </button>
+        <input
+          className="searchbar"
+          type="text"
+          onChange={(e) => setSearch(e.target.value)}
+          value={search}
+          placeholder="Search your exercise"
+        />
+      </div>
+      <div className={filterOpen ? "fi fiopen" : "fi"}>
+        {categories.map((c) => {
+          return (
+            <>
+              <input
+                type="checkbox"
+                name=""
+                id=""
+                value={c}
+                onChange={(e) => {
+                  if (e.target.checked) {
+                    setFilter((prevState) => {
+                      if (!prevState.includes(c)) {
+                        return [...prevState, c];
+                      }
+                      return prevState;
+                    });
+                  } else {
+                    setFilter((prevState) => {
+                      const prevStateCopy = [...prevState];
+                      const indexOf = prevState.indexOf(c);
+                      prevStateCopy.splice(indexOf, 1);
+                      return prevStateCopy;
+                    });
+                  }
+                }}
+              />
+              <label htmlFor={c}>{c}</label>
+            </>
+          );
+        })}
+      </div>
+
+      {filteredExercises
         ?.filter((item) =>
           item.exercise_name.toLowerCase().includes(search.toLowerCase())
         )
