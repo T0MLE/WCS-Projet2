@@ -1,3 +1,21 @@
+<img src="./frontend/src/assets/wfc.png" alt="WFC"><h1>***WILD FITNESS CLUB***</h1>
+
+Our fitness application uses React and APIs to provide a personalized fitness experience to our users.
+The main features of our application include:
+
+
+
+- Customized fitness programs based on each user's preferences and goals.
+
+- A wide selection of fitness exercises to allow each user to create a program that suits their needs.
+
+- Healthy and balanced meals to help users maintain a healthy lifestyle and achieve their fitness goals.
+
+
+We are a small team passionate about fitness and technology, and we created this application to help people achieve 
+their fitness goals in an efficient and personalized way. 
+We are proud of this application and we hope it will help you achieve your own fitness goals.
+
 ## Concept
 
 This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
