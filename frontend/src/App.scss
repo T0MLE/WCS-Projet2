@@ -18,6 +18,9 @@ $color_5: #C8E1BF;
 body {
 	background-color: #f5f8fa;
 }
+.App {
+  padding-bottom: 80px;
+}
 
 .NutritionSection{
   clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
@@ -62,7 +65,7 @@ header {
   background-position: 85% 90%;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: calc(100vh - 65px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,7 +85,7 @@ header {
     font-weight: 600;
   }
   h2 {
-    margin-top: 50vh;
+    margin-top: 45vh;
     text-transform: uppercase;
     color: $color_1;
 	  font-style: normal;
@@ -94,7 +97,6 @@ header {
   }
   button {
     margin-top: 5vh;
-    padding: 8px 50px;
     border-radius: 30px;
     text-transform: uppercase;
     background-color: $background-color_1;
@@ -110,6 +112,7 @@ header {
       font-weight: 600;
       font-size: 16px;
       line-height: 24px;
+      padding: 8px 50px;
     }
   }
 }
@@ -480,7 +483,7 @@ video {
   
 }
 .body-part-exercises {
-	padding-bottom: 65px;
+	padding: 16px 16px 65px 16px;
   display: flex;
   flex-direction: column;
 }
@@ -490,8 +493,7 @@ video {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 8px 16px;
-
+width: 100%;
 }
 .backarrow {
 	height: 32px;
@@ -608,7 +610,7 @@ margin: 32px auto 8px auto;
 .filter-search {
   display: flex;
   align-items: center;
-  width: 90%;
+  width: 100%;
   margin: 0px auto 16px auto;
   .searchbar {
     all:unset;
@@ -653,7 +655,8 @@ margin: 32px auto 8px auto;
   grid-row-gap: 8px;
   align-items: center;
   background-color: white;
-  width: 90%;
+  width: 100%;
+  margin: auto;
   height: 0px;
   border-radius: 16px;
   border: none;
@@ -664,7 +667,7 @@ margin: 32px auto 8px auto;
 
 }
 .fiopen {
-  height: 200px;
+  height: 100%;
   margin-bottom: 16px;
   border: 1px solid #e8e8e8;
   padding: 16px 8px;
@@ -674,3 +677,47 @@ margin: 32px auto 8px auto;
     opacity:1;
   }
 }
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.validate {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: 1px solid black;
+  margin-right: 16px;
+  appearance: none;
+  &:checked {
+    background-image: url("./assets/checked.png" );
+    background-size: cover;
+  }
+
+}
+
+.dashboard-container {
+  padding: 16px 16px 80px 16px;
+  display: flex;
+  flex-direction: column;
+  h2 {
+    margin: 16px 0px;
+  }
+  .arrow-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    }
+    .imgprog {
+      width: 70%;
+      margin: 24px auto;
+    }
+    .backarrow {
+      height: 32px;
+      width: 32px;
+      margin-right: 16px;
+    
+    }
+  }
+

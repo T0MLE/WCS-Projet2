@@ -51,7 +51,7 @@ function Exercise({ name, video, description }) {
           border: "none",
           color: "black",
           margin: "4px auto",
-          width: "90%",
+          width: "100%",
           fontFamily: "Arial !important",
         }}
       >

@@ -20,7 +20,16 @@
         margin-left: 2%;
     }
     .body-part-exercises{
-        padding-top: 70px;
+        padding: 70px 24px 24px 24px;
+        h2 {
+            font-style: normal;
+font-weight: 600;
+font-size: 40px;
+line-height: 60px;
+        }
+        .arrow-title {
+margin-bottom: 24px;
+        }
     }
 
     video {
@@ -47,12 +56,17 @@
         align-items: center;
         margin: auto;
         height: 100vh;
+        .arrow-title {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
         h2 {
             font-style: normal;
             font-weight: 600;
             font-size: 40px;
             line-height: 60px;
-            margin-bottom: 16px;
+            margin-left: 16px;
         }
         p {
             font-style: normal;
@@ -139,6 +153,7 @@
     header {
         align-items: flex-start;
         justify-content: center;
+        height: 100vh;
         div {
             display: flex;
             flex-direction: column;
@@ -159,6 +174,36 @@
             color: black;
 
         }
+    }
+
+    .fi {
+        display: grid;
+grid-template-columns: 1fr 4fr 1fr 4fr 1fr 4fr 1fr 4fr 1fr 4fr;
+grid-template-rows: repeat(2, 50px);
+grid-column-gap: 8px;
+grid-row-gap: 8px;
+    }
+
+    .fiopen {
+        height: 100%;
+    }
+
+    .filter-search {
+        display: flex;
+        justify-content: space-between;
+        .searchbar {
+          width: 18vw;
+        }
+      .btn-filter{ 
+        width: 6vw;
+    }}
+
+    .dashboard-container {
+        padding-top: 70px;
+        .imgprog {
+            width: 25%;
+            margin: 24px auto;
+          }
     }
 }
 
