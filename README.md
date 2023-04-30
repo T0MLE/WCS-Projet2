@@ -1,4 +1,5 @@
-<img src="./frontend/src/assets/wfc.png" alt="WFC"><h1>***WILD FITNESS CLUB***</h1>
+![WildFitnessClub__1_-removebg-preview](https://user-images.githubusercontent.com/119880787/235344411-fbed59c8-6de0-4ce9-b7df-8ad18fce18b8.png)
+<h1>***WILD FITNESS CLUB***</h1>
 
 Our fitness application uses React and APIs to provide a personalized fitness experience to our users.
 The main features of our application include:
@@ -15,6 +16,11 @@ The main features of our application include:
 We are a small team passionate about fitness and technology, and we created this application to help people achieve 
 their fitness goals in an efficient and personalized way. 
 We are proud of this application and we hope it will help you achieve your own fitness goals.
+
+https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+	https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
+  https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
+  https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white
 
 ## Concept
 
@@ -33,11 +39,12 @@ It's pre-configured with a set of tools which'll help students produce industry-
 
 ### Available Commands
 
+https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white
 - `migrate` : Run the database migration script
 - `dev` : Starts both servers (frontend + backend) in one terminal
 - `dev-front` : Starts the React frontend server
 - `dev-back` : Starts the Express backend server
-- `lint` : Runs validation tools, and refuses unclean code (will be executed on every _commit_)
+- `lint` : Runs validation tools, and refuses unclean code (will be executed on every _commit_) 
 - `fix` : Fixes linter errors (run it if `lint` growls on your code !)
 
 ## FAQ
@@ -47,8 +54,8 @@ It's pre-configured with a set of tools which'll help students produce industry-
 - _Concurrently_ : Allows for several commands to run concurrently in the same CLI
 - _Husky_ : Allows to execute specific commands that trigger on _git_ events
 - _Vite_ : Alternative to _Create-React-App_, packaging less tools for a more fluid experience
-- _ESLint_ : "Quality of code" tool, ensures chosen rules will be enforced
-- _Prettier_ : "Quality of code" tool as well, focuses on the styleguide
+- _ESLint_ : "Quality of code" tool, ensures chosen rules will be enforced https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white
+- _Prettier_ : "Quality of code" tool as well, focuses on the styleguide https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E
 - _ Airbnb Standard_ : One of the most known "standards", even though it's not officially linked to ES/JS
 - _Nodemon_ : Allows to restart the server everytime a .js file is udated
 
