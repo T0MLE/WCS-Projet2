@@ -176,7 +176,7 @@ margin-bottom: 24px;
         }
     }
 
-    .fi {
+    .filters {
         display: grid;
 grid-template-columns: 1fr 4fr 1fr 4fr 1fr 4fr 1fr 4fr 1fr 4fr;
 grid-template-rows: repeat(2, 50px);
@@ -184,7 +184,7 @@ grid-column-gap: 8px;
 grid-row-gap: 8px;
     }
 
-    .fiopen {
+    .filters-open {
         height: 100%;
     }
 

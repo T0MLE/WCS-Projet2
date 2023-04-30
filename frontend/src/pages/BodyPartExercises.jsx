@@ -100,7 +100,7 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
           placeholder="Search your exercise"
         />
       </div>
-      <div className={filterOpen ? "fi fiopen" : "fi"}>
+      <div className={filterOpen ? "filters filters-open" : "filters"}>
         {categories.map((c) => {
           return (
             <>

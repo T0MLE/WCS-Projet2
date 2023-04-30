@@ -647,7 +647,7 @@ margin: 32px auto 8px auto;
 }}}
 
 
-.fi {
+.filters {
   display: grid;
   grid-template-columns: 1fr 4fr 1fr 4fr;
   grid-template-rows: repeat(5, 1fr);
@@ -666,7 +666,7 @@ margin: 32px auto 8px auto;
   }
 
 }
-.fiopen {
+.filters-open {
   height: 100%;
   margin-bottom: 16px;
   border: 1px solid #e8e8e8;
