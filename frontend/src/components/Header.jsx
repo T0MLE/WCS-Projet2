@@ -9,9 +9,9 @@ function Header() {
         <h2>
           Get into the <br /> fitness journey
         </h2>
-        <Link to="/subscription">
-          <button type="button">Join the team</button>
-        </Link>
+        <button type="button">
+          <Link to="/subscription">Join the team</Link>
+        </button>
       </header>
     </div>
   );

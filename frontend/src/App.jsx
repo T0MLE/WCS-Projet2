@@ -2,17 +2,21 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import "./desktop.scss";
 import { Route, Routes } from "react-router-dom";
+// import ClipLoader from "react-spinners/ClipLoader";
 import BodyPartExercises from "./components/BodyPartExercises";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Programs from "./components/Programs";
 import Subscription from "./components/Subscription";
+// import Loader from "./components/Loader";
 
 function App() {
   const [exercises, setExercises] = useState([]);
   const [filteredExercises, setFilteredExercises] = useState([]);
   const [filter, setFilter] = useState("");
   const [uniqueEx, setUniqueEx] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
+
   const options = {
     method: "GET",
     headers: {
@@ -23,10 +27,15 @@ function App() {
   const controller = new AbortController();
 
   useEffect(() => {
+    // setIsLoading(true);
     fetch("https://musclewiki.p.rapidapi.com/exercises", options)
       .then((response) => response.json())
-      .then((response) => setExercises(response))
+      .then((response) => {
+        setExercises(response);
+        // setIsLoading(false);
+      })
       .catch((err) => console.error(err));
+    // .finally(() => setIsLoading(false));
     return () => {
       controller.abort();
     };
@@ -43,6 +52,14 @@ function App() {
       ...new Map(filteredExercises.map((v) => [v.exercise_name, v])).values(),
     ]);
   }, [filteredExercises]);
+
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 3000);
+
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const Pr1 = [
     [206, 234, 131, 513, 135],
@@ -69,7 +86,13 @@ function App() {
   ];
 
   return (
-    <>
+    <div>
+      {/* {isLoading ? (
+        <div className="loadercontainer">
+          <ClipLoader color="#36d7b7" loading size={150} />
+        </div>
+      ) : ( */}
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -100,7 +123,7 @@ function App() {
         <Route path="/subscription" element={<Subscription />} />
       </Routes>
       <Navbar />
-    </>
+    </div>
   );
 }
 

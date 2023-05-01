@@ -15,12 +15,12 @@ function Day({ prog, exercises, index }) {
     <div className="accordion">
       <Accordion
         sx={{
-          backgroundColor: "white !important",
+          backgroundColor: "#f5f8fa !important",
           borderRadius: "16px !important",
           border: "none",
           color: "black",
           margin: "4px auto",
-          width: "90%",
+          width: "99%",
           fontFamily: "Arial !important",
           "& .MuiAccordionItem:last-of-type .MuiAccordionSummary-root": {
             marginBottom: "100px",

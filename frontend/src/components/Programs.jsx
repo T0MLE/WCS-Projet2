@@ -1,5 +1,9 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Start from "./Start";
 import Day from "./Day";
 import bp1 from "../assets/bp1.svg";
@@ -31,11 +35,33 @@ function Programs({ day, exercises, prog }) {
 
   const monAutreTruc = weekArr.map((a, i) => {
     return (
-      <div>
-        <p className="weekstyle">Week {i + 1}</p>
-        {dayArr.map((e, index) => {
-          return <Day prog={prog[index]} exercises={exercises} index={index} />;
-        })}
+      <div className="accordionweek">
+        <Accordion
+          sx={{
+            backgroundColor: "white !important",
+            borderRadius: "16px !important",
+            border: "none",
+            color: "black",
+            margin: "4px auto 0px auto !important",
+            width: "95%",
+            fontFamily: "Arial !important",
+          }}
+        >
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <p>Week {i + 1}</p>
+          </AccordionSummary>
+          <AccordionDetails>
+            {dayArr.map((e, index) => {
+              return (
+                <Day prog={prog[index]} exercises={exercises} index={index} />
+              );
+            })}
+          </AccordionDetails>
+        </Accordion>
       </div>
     );
   });
