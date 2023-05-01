@@ -6,10 +6,10 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Start from "./Start";
 import Day from "./Day";
-import bp1 from "../assets/bp1.svg";
-import mb1 from "../assets/mb1.svg";
-import fb1 from "../assets/fb1.svg";
-import bw1 from "../assets/bw1.svg";
+import bbp1 from "../assets/bbp1.svg";
+import bmb1 from "../assets/bmb1.svg";
+import bfb1 from "../assets/bfb1.svg";
+import bbw1 from "../assets/bbw1.svg";
 import backarrow from "../assets/back-arrow.svg";
 
 function Programs({ day, exercises, prog }) {
@@ -17,18 +17,34 @@ function Programs({ day, exercises, prog }) {
   const weekArr = Array.from({ length: 12 }, (v, k) => k + 1);
 
   // const monTruc = ;
+  // const svg = () => {
+  //   if (window.location.pathname.slice(1) === "bootypump") {
+  //     return <img src={bp1} alt="bootypump" />;
+  //   }
+  //   if (window.location.pathname.slice(1) === "bodyweight") {
+  //     return <img src={bw1} alt="bodyweight" />;
+  //   }
+  //   if (window.location.pathname.slice(1) === "fullbody") {
+  //     return <img src={fb1} alt="fullbody" />;
+  //   }
+  //   if (window.location.pathname.slice(1) === "musclebuilding") {
+  //     return <img src={mb1} alt="musclebuilding" />;
+  //   }
+  //   return null;
+  // };
+
   const svg = () => {
     if (window.location.pathname.slice(1) === "bootypump") {
-      return <img src={bp1} alt="bootypump" />;
+      return <img src={bbp1} alt="bootypump" />;
     }
     if (window.location.pathname.slice(1) === "bodyweight") {
-      return <img src={bw1} alt="bodyweight" />;
+      return <img src={bbw1} alt="bodyweight" />;
     }
     if (window.location.pathname.slice(1) === "fullbody") {
-      return <img src={fb1} alt="fullbody" />;
+      return <img src={bfb1} alt="fullbody" />;
     }
     if (window.location.pathname.slice(1) === "musclebuilding") {
-      return <img src={mb1} alt="musclebuilding" />;
+      return <img src={bmb1} alt="musclebuilding" />;
     }
     return null;
   };
@@ -72,11 +88,17 @@ function Programs({ day, exercises, prog }) {
 
   return (
     <div className="program">
-      <div className="arrow-title">
-        <Link to="/">
-          <img className="backarrow" src={backarrow} alt="backarrow" />
-        </Link>
-        <h2>Our programs</h2>
+      <div className="headerprog">
+        {" "}
+        <div className="arrow-title">
+          <Link to="/">
+            <img className="backarrow" src={backarrow} alt="backarrow" />
+          </Link>
+          <h2>Our programs</h2>
+        </div>
+        <div className="startprog">
+          <Start content="Start this program" />
+        </div>
       </div>
 
       <div className="programimage">
@@ -88,7 +110,6 @@ function Programs({ day, exercises, prog }) {
           <Start content="Start this program" />
         </Link>)} */}
         <div className="progpic">{svg()}</div>
-        <Start content="Start this program" />
       </div>
       <div className="programcontainer">{monAutreTruc}</div>
     </div>
