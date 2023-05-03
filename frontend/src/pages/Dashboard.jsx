@@ -22,9 +22,17 @@ export default function Dashboard({ day, exercises, mb, bw }) {
   const dayArr = Array.from({ length: day }, (v, k) => k + 1);
   const weekArr = Array.from({ length: 12 }, (v, k) => k + 1);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [weekLeft, setWeekLeft] = useState(12);
+  const [openPopUp, setOpenPopUp] = useState(false);
 
   const handleCheck = (e) => {
     e.stopPropagation();
+    if (e.target.checked) {
+      setOpenPopUp(true);
+      setTimeout(() => {
+        setOpenPopUp(false);
+      }, "2000");
+    }
   };
   const progMuscleBuilding = weekArr.map((a, i) => {
     return (
@@ -45,7 +53,14 @@ export default function Dashboard({ day, exercises, mb, bw }) {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <input type="checkbox" className="validate" onClick={handleCheck} />
+            <input
+              type="checkbox"
+              className="validate"
+              onClick={(e) => {
+                handleCheck(e);
+                setWeekLeft(11 - i);
+              }}
+            />
             <p>Week {i + 1}</p>
           </AccordionSummary>
           <AccordionDetails>
@@ -78,7 +93,14 @@ export default function Dashboard({ day, exercises, mb, bw }) {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <input type="checkbox" className="validate" onClick={handleCheck} />
+            <input
+              type="checkbox"
+              className="validate"
+              onClick={(e) => {
+                handleCheck(e);
+                setWeekLeft(11 - i);
+              }}
+            />
             <p>Week {i + 1}</p>
           </AccordionSummary>
           <AccordionDetails>
@@ -106,66 +128,77 @@ export default function Dashboard({ day, exercises, mb, bw }) {
   const [imgSelect, setImgSelect] = useState(1);
 
   return (
-    <div className="dashboard-container">
-      <div className="arrow-title">
-        <Link to="/" onClick={handleNav}>
-          <img className="backarrow" src={backarrow} alt="backarrow" />
-        </Link>
-        <h2>Dashboard</h2>
-      </div>
-      <p id="dash-title">Your programs</p>
-      <div id="swiper-dash">
-        <Swiper
-          spaceBetween={30}
-          pagination
-          modules={[Pagination]}
-          onSlideChange={(swiper) =>
-            setTimeout(() => {
-              setActiveIndex(swiper.activeIndex);
-            }, "100")
-          }
-          className="mySwiper"
-        >
-          <SwiperSlide>
-            <img className="imgprog" src={mb1} alt="musclebuilding" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img className="imgprog" src={bw1} alt="musclebuilding" />
-          </SwiperSlide>
-        </Swiper>
-      </div>
+    <>
+      <div className="dashboard-container">
+        <div className="arrow-title">
+          <Link to="/" onClick={handleNav}>
+            <img className="backarrow" src={backarrow} alt="backarrow" />
+          </Link>
+          <h2>Dashboard</h2>
+        </div>
+        <p id="dash-title">Your programs</p>
+        <div id="swiper-dash">
+          <Swiper
+            spaceBetween={30}
+            pagination
+            modules={[Pagination]}
+            onSlideChange={(swiper) =>
+              setTimeout(() => {
+                setActiveIndex(swiper.activeIndex);
+              }, "100")
+            }
+            className="mySwiper"
+          >
+            <SwiperSlide>
+              <img className="imgprog" src={mb1} alt="musclebuilding" />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className="imgprog" src={bw1} alt="musclebuilding" />
+            </SwiperSlide>
+          </Swiper>
+        </div>
 
-      <div className="gallery-dash">
-        <img
-          src={mb1}
-          alt=""
-          className={imgSelect === 1 ? "imgprog selected" : "imgprog"}
-          onClick={() => {
-            setImgSelect(1);
-            setTimeout(() => {
-              setActiveIndex(0);
-            }, "100");
-          }}
-        />
-        <img
-          src={bw1}
-          alt=""
-          className={imgSelect === 2 ? "imgprog selected" : "imgprog"}
-          onClick={() => {
-            setImgSelect(2);
-            setTimeout(() => {
-              setActiveIndex(1);
-            }, "100");
-          }}
-        />
-        <div className="emptyprog" />
-        <div className="emptyprog" />
+        <div className="gallery-dash">
+          <img
+            src={mb1}
+            alt=""
+            className={imgSelect === 1 ? "imgprog selected" : "imgprog"}
+            onClick={() => {
+              setImgSelect(1);
+              setTimeout(() => {
+                setActiveIndex(0);
+              }, "100");
+            }}
+          />
+          <img
+            src={bw1}
+            alt=""
+            className={imgSelect === 2 ? "imgprog selected" : "imgprog"}
+            onClick={() => {
+              setImgSelect(2);
+              setTimeout(() => {
+                setActiveIndex(1);
+              }, "100");
+            }}
+          />
+          <div className="emptyprog" />
+          <div className="emptyprog" />
+        </div>
+        <div className="dashboard1">
+          {activeIndex === 0 && progMuscleBuilding}
+        </div>
+        <div className="dashboard2">{activeIndex !== 0 && progBodyweight}</div>
       </div>
-      <div className="dashboard1">
-        {activeIndex === 0 && progMuscleBuilding}
+      <div className={openPopUp ? "popup-week alert" : "popup-week"}>
+        <p>
+          {weekLeft > 0
+            ? `Keep going ! ${weekLeft} ${
+                weekLeft === 1 ? "week" : "weeks"
+              } to go !`
+            : `Congratulations ! You did it !`}
+        </p>
       </div>
-      <div className="dashboard2">{activeIndex !== 0 && progBodyweight}</div>
-    </div>
+    </>
   );
 }
 
