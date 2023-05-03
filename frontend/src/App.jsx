@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import "./desktop.scss";
 import { Route, Routes } from "react-router-dom";
-import BodyPartExercises from "./components/BodyPartExercises";
-import Home from "./components/Home";
+import BodyPartExercises from "./pages/BodyPartExercises";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Subscription from "./components/Subscription";
+import Subscription from "./pages/Subscription";
 
 function App() {
   const [exercises, setExercises] = useState([]);
