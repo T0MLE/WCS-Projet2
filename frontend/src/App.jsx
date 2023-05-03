@@ -136,12 +136,11 @@ function App() {
           </>
         }
       />
-      <Route path="/subscription" element={<Subscription />} />
       <Route
         path="/dashboard"
         element={
           <>
-            <Dashboard exercises={exercises} day={3} prog={Pr2} />
+            <Dashboard exercises={exercises} day={3} mb={Pr2} bw={Pr4} />
             <Navbar />
           </>
         }

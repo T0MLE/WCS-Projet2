@@ -200,12 +200,15 @@ header {
   }
   button {
     margin-top: 10px;
-    padding: 0 20px;
+    padding: 4px 20px;
     border-radius: 30px;
     border: none;
     font-size: 16px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
@@ -678,11 +681,25 @@ margin: 32px auto 8px auto;
   }
 }
 
-.dashboard {
+.dashboard1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;  
+
 }
+
+.dashboard2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+  opacity: 1;  
+
+
+}
+
 .validate {
   border-radius: 50%;
   width: 25px;
@@ -703,6 +720,16 @@ margin: 32px auto 8px auto;
   flex-direction: column;
   h2 {
     margin: 16px 0px;
+    font-style: normal;
+font-weight: 600;
+font-size: 36px;
+line-height: 54px;
+  }
+  #dash-title {
+    font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 36px;
   }
   .arrow-title {
     display: flex;
@@ -710,14 +737,17 @@ margin: 32px auto 8px auto;
     align-items: center;
     }
     .imgprog {
-      width: 70%;
-      margin: 24px auto;
+      width: 100%;
+      margin: 32px auto;
     }
     .backarrow {
       height: 32px;
       width: 32px;
       margin-right: 16px;
     
+    }
+    .gallery-dash {
+      display: none;
     }
   }
 

@@ -4,9 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import Start from "../components/Start";
 import Day from "../components/Day";
 import bp1 from "../assets/bp1.svg";
-import mb1 from "../assets/mb1.svg";
+import mb1 from "../assets/mb1.png";
 import fb1 from "../assets/fb1.svg";
-import bw1 from "../assets/bw1.svg";
+import bw1 from "../assets/bw1.png";
 import backarrow from "../assets/back-arrow.svg";
 
 function Programs({ day, exercises, prog }) {
@@ -73,6 +73,6 @@ export default Programs;
 
 Programs.propTypes = {
   day: PropTypes.number.isRequired,
-  prog: PropTypes.arrayOf(PropTypes.number).isRequired,
+  prog: PropTypes.arrayOf(PropTypes.shape).isRequired,
   exercises: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
