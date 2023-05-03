@@ -260,5 +260,18 @@
             transform: scale(1.1);
           }
     }
+
+    .popup-week {
+        width: 20%;
+        top: 80px;
+        left: 79%;
+        transform: translateY(0);
+        transform: translateX(200px);
+    }
+
+    .alert {
+        transform: translateX(0px);
+
+    }
 }
 

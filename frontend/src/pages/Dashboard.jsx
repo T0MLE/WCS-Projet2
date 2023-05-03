@@ -31,7 +31,7 @@ export default function Dashboard({ day, exercises, mb, bw }) {
       setOpenPopUp(true);
       setTimeout(() => {
         setOpenPopUp(false);
-      }, "2000");
+      }, "3000");
     }
   };
   const progMuscleBuilding = weekArr.map((a, i) => {
@@ -136,7 +136,7 @@ export default function Dashboard({ day, exercises, mb, bw }) {
           </Link>
           <h2>Dashboard</h2>
         </div>
-        <p id="dash-title">Your programs</p>
+        <p id="dash-title">My programs</p>
         <div id="swiper-dash">
           <Swiper
             spaceBetween={30}
@@ -153,7 +153,7 @@ export default function Dashboard({ day, exercises, mb, bw }) {
               <img className="imgprog" src={mb1} alt="musclebuilding" />
             </SwiperSlide>
             <SwiperSlide>
-              <img className="imgprog" src={bw1} alt="musclebuilding" />
+              <img className="imgprog" src={bw1} alt="bodyweight" />
             </SwiperSlide>
           </Swiper>
         </div>
