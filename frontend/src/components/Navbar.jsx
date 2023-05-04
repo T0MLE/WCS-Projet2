@@ -124,5 +124,9 @@ function Navbar({ isTransparent }) {
 export default Navbar;
 
 Navbar.propTypes = {
-  isTransparent: PropTypes.bool.isRequired,
+  isTransparent: PropTypes.bool,
+};
+
+Navbar.defaultProps = {
+  isTransparent: false,
 };

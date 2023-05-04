@@ -32,10 +32,17 @@ function Programs({ day, exercises, prog }) {
 
   const monAutreTruc = weekArr.map((a, i) => {
     return (
-      <div>
+      <div key={weekArr.indexOf(a)}>
         <p className="weekstyle">Week {i + 1}</p>
         {dayArr.map((e, index) => {
-          return <Day prog={prog[index]} exercises={exercises} index={index} />;
+          return (
+            <Day
+              key={dayArr.indexOf(e)}
+              prog={prog[index]}
+              exercises={exercises}
+              index={index}
+            />
+          );
         })}
       </div>
     );

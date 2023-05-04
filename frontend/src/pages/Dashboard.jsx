@@ -36,7 +36,7 @@ export default function Dashboard({ day, exercises, mb, bw }) {
   };
   const progMuscleBuilding = weekArr.map((a, i) => {
     return (
-      <div>
+      <div key={weekArr.indexOf(a)}>
         <Accordion
           sx={{
             backgroundColor: "white !important",
@@ -66,7 +66,12 @@ export default function Dashboard({ day, exercises, mb, bw }) {
           <AccordionDetails>
             {dayArr.map((e, index) => {
               return (
-                <Day prog={mb[index]} exercises={exercises} index={index} />
+                <Day
+                  key={dayArr.indexOf(e)}
+                  prog={mb[index]}
+                  exercises={exercises}
+                  index={index}
+                />
               );
             })}
           </AccordionDetails>
@@ -76,7 +81,7 @@ export default function Dashboard({ day, exercises, mb, bw }) {
   });
   const progBodyweight = weekArr.map((a, i) => {
     return (
-      <div>
+      <div key={weekArr.indexOf(a)}>
         <Accordion
           sx={{
             backgroundColor: "white !important",
@@ -106,7 +111,12 @@ export default function Dashboard({ day, exercises, mb, bw }) {
           <AccordionDetails>
             {dayArr.map((e, index) => {
               return (
-                <Day prog={bw[index]} exercises={exercises} index={index} />
+                <Day
+                  key={dayArr.indexOf(e)}
+                  prog={bw[index]}
+                  exercises={exercises}
+                  index={index}
+                />
               );
             })}
           </AccordionDetails>
@@ -204,7 +214,7 @@ export default function Dashboard({ day, exercises, mb, bw }) {
 
 Dashboard.propTypes = {
   day: PropTypes.number.isRequired,
-  mb: PropTypes.arrayOf(PropTypes.number).isRequired,
-  bw: PropTypes.arrayOf(PropTypes.number).isRequired,
+  mb: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  bw: PropTypes.arrayOf(PropTypes.shape).isRequired,
   exercises: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };

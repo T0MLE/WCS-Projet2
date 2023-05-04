@@ -70,7 +70,7 @@ function Exercise({ name, video, description }) {
           <div id="exercise-description">
             {description.map((e, i) => {
               return (
-                <div id="steps">
+                <div id="steps" key={description.indexOf(e)}>
                   <span>{i + 1} :</span> <p>{e}</p>
                 </div>
               );
@@ -84,7 +84,7 @@ function Exercise({ name, video, description }) {
 
 Exercise.propTypes = {
   name: PropTypes.string.isRequired,
-  video: PropTypes.string.isRequired,
+  video: PropTypes.arrayOf(PropTypes.string).isRequired,
   description: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 

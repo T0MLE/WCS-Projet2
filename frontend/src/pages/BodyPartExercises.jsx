@@ -105,6 +105,7 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
           return (
             <>
               <input
+                key={categories.indexOf(c)}
                 type="checkbox"
                 name=""
                 id=""
