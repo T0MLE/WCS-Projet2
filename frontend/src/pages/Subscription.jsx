@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import backarrow from "../assets/back-arrow.svg";
 import SubscriptionCard from "../components/SubscriptionCard";
@@ -7,6 +8,10 @@ function Subscription() {
   const handleNav = () => {
     nav(-1);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="subscription-cards">

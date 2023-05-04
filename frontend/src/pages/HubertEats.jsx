@@ -22,7 +22,7 @@ function HubertEats({ data }) {
       {Boolean(data.length) && (
         <section className="NutritionID">
           <div className="arrow-title">
-            <Link to="/Nutritonpage" onClick={handleNav}>
+            <Link to="/Nutritionpage" onClick={handleNav}>
               <img className="backarrow" src={backarrow} alt="backarrow" />
             </Link>{" "}
             <h2>{singleMeal?.strMeal}</h2>
