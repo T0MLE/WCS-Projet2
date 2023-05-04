@@ -84,7 +84,7 @@ function Exercise({ name, video, description }) {
 
 Exercise.propTypes = {
   name: PropTypes.string.isRequired,
-  video: PropTypes.arrayOf(PropTypes.string).isRequired,
+  video: PropTypes.string.isRequired,
   description: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
