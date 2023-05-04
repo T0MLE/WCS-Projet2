@@ -90,8 +90,10 @@ function Navbar({ isTransparent }) {
           </li>
           <li>
             <a href="/">
-              <img src="./src/assets/plaque.png" alt="" width="30px" />
-              Nutrition
+              <Link to="/Nutritionpage">
+                <img src="./src/assets/plaque.png" alt="" width="30px" />
+                Nutrition
+              </Link>
             </a>
           </li>
         </ul>
@@ -114,7 +116,9 @@ function Navbar({ isTransparent }) {
               Exercises
             </a>
           </li>
-          <li>Nutrition</li>
+          <li>
+            <Link to="/Nutritionpage">Nutrition</Link>
+          </li>
         </ul>
       </nav>
     </div>

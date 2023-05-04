@@ -48,6 +48,103 @@
         align-items: center;
     }
 
+/* ------------------------ Partie nutrition ---------------------*/
+.swipper{
+    display: none;
+}
+
+.desk{
+    display: inline-flex
+}
+
+.NutritionSection{
+    display: block; 
+    width: 100%;
+    padding: 5%;
+}
+
+.NutritionSection img{
+    width: 100%;
+    padding: 5%;
+}
+
+.NutritionSection h2{
+    margin: 2%;
+}
+
+.NutritionSection button{
+    margin: 7% 0 0 50%;
+    transform: translateX(-50%);
+    padding: 1em;
+    font-size: 16px;
+}
+
+.Nutrition-banner{
+    border-radius: 0px !important;
+    width: 100% !important; 
+    display: initial;
+}
+
+.NutritionGalery {
+    padding: 5% 10%;
+}
+
+
+.NutritionPage{
+    padding: 65px 0%;
+    .arrow-title {
+        display: none;
+    }
+}
+
+.NutritionPage img{  
+    width: 80%;
+    height: 20%;
+    border-radius: 15%;
+}
+
+.NutritionPage a{
+    display: flex;
+    justify-content: center;
+}
+
+.NutritionPage h2{
+    display: none;
+}
+
+.NutritionPage h3{
+    padding-top: 0;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Ingredient{
+    width: 45%;
+    padding: 2%;
+    margin: 0 0 0 20%; 
+}
+
+.NutritionID {
+    margin: 0 20%;
+}
+
+.NutritionID img{  
+    width: 30%;
+    border-radius: 15%;
+    padding: 0;
+    margin: 0 0% 0 5%;
+}
+
+.Instruction {
+    margin: 0 5%;
+    text-align: center;
+}
+
+
     .subscription-cards {
         width: 80%;
         display: flex;
@@ -98,7 +195,6 @@
         padding: 8px 48px 8px 48px;
 
         p{
-            font-family: 'Poppins';
             font-weight: 600;
             font-style: normal;
             line-height: 48px;
@@ -113,7 +209,6 @@
                 list-style: none;
                 text-decoration: none;
                 margin-left: 48px;
-                font-family: 'Poppins';
                 font-style: normal;
                 font-weight: 600;
                 font-size: 20px;
@@ -129,12 +224,9 @@
         }
     }
     .navbar-desktop-scrolled {
-        transition: background-color 0.3s ease-in-out;
         background-color: white;
-        transition: border-bottom 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
         border-bottom: 1px solid lightgray;
-        transition: box-shadow 0.3s ease-in-out;
-
         box-shadow:0px -3px 10px 1px rgba(93,93,93,0.36);
             li {
                 transition: color 0.3s ease-in-out;
@@ -274,4 +366,3 @@
 
     }
 }
-

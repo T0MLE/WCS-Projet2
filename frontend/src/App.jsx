@@ -5,6 +5,8 @@ import { Route, Routes } from "react-router-dom";
 import BodyPartExercises from "./pages/BodyPartExercises";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+import NutritionPage from "./pages/NutritionPage";
+import HubertEats from "./pages/HubertEats";
 import Programs from "./pages/Programs";
 import Subscription from "./pages/Subscription";
 import Dashboard from "./pages/Dashboard";
@@ -45,6 +47,21 @@ function App() {
     ]);
   }, [filteredExercises]);
 
+  const [nutrition, setNutrition] = useState([]);
+  useEffect(() => {
+    fetch("http://127.0.0.1:3000/data")
+      .then((response) => response.json())
+      .then((result) => {
+        setNutrition(result);
+        console.warn(result);
+      })
+      .catch((error) => console.error(error));
+
+    return () => {
+      controller.abort();
+    };
+  }, []);
+
   const Pr1 = [
     [206, 234, 131, 513, 135],
     [130, 559, 165, 145, 534],
@@ -75,6 +92,32 @@ function App() {
         path="/"
         element={
           <>
+            <Home data={nutrition} /> <Navbar isTransparent />
+          </>
+        }
+      />
+      <Route
+        path="/Nutritionpage"
+        element={
+          <>
+            <NutritionPage data={nutrition} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/Nutritionpage/:idMeal"
+        element={
+          <>
+            <HubertEats data={nutrition} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/"
+        element={
+          <>
             <Home /> <Navbar isTransparent />
           </>
         }
@@ -100,6 +143,7 @@ function App() {
           </>
         }
       />
+      <Route path="/" element={<Home data={nutrition} />} />
       <Route
         path="/bootypump"
         element={
