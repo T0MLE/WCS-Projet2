@@ -11,8 +11,10 @@ import MannequinFront from "./MannequinFront";
 function MannequinWrapper() {
   return (
     <>
-      <h2 className="muscle-section-title">Find an exercise</h2>
-      <div className="mySwiper" id="swiper">
+      <h2 className="muscle-section-title" id="ex">
+        Find an exercise
+      </h2>
+      <div className="mySwiper">
         <Swiper
           spaceBetween={30}
           pagination

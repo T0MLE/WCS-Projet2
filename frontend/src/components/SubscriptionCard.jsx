@@ -17,5 +17,8 @@ export default SubscriptionCard;
 SubscriptionCard.propTypes = {
   rythm: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  save: PropTypes.string.isRequired,
+  save: PropTypes.string,
+};
+SubscriptionCard.defaultProps = {
+  save: null,
 };

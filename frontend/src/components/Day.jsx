@@ -15,12 +15,12 @@ function Day({ prog, exercises, index }) {
     <div className="accordion">
       <Accordion
         sx={{
-          backgroundColor: "white !important",
+          backgroundColor: "#f5f8fa;",
           borderRadius: "16px !important",
           border: "none",
           color: "black",
           margin: "4px auto",
-          width: "90%",
+          width: "99%",
           fontFamily: "Arial !important",
           "& .MuiAccordionItem:last-of-type .MuiAccordionSummary-root": {
             marginBottom: "100px",
@@ -40,7 +40,7 @@ function Day({ prog, exercises, index }) {
               <Exercise
                 key={e.id}
                 name={e.exercise_name}
-                video={e.videoURL}
+                video={e.videoURL[0]}
                 description={e.steps}
               />
             );

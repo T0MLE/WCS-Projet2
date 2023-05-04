@@ -51,7 +51,7 @@ function Exercise({ name, video, description }) {
           border: "none",
           color: "black",
           margin: "4px auto",
-          width: "90%",
+          width: "100%",
           fontFamily: "Arial !important",
         }}
       >
@@ -70,7 +70,7 @@ function Exercise({ name, video, description }) {
           <div id="exercise-description">
             {description.map((e, i) => {
               return (
-                <div id="steps">
+                <div id="steps" key={description.indexOf(e)}>
                   <span>{i + 1} :</span> <p>{e}</p>
                 </div>
               );

@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import "./desktop.scss";
 import { Route, Routes } from "react-router-dom";
-import BodyPartExercises from "./components/BodyPartExercises";
-import Home from "./components/Home";
+import BodyPartExercises from "./pages/BodyPartExercises";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Programs from "./components/Programs";
-import Subscription from "./components/Subscription";
+import Programs from "./pages/Programs";
+import Subscription from "./pages/Subscription";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const [exercises, setExercises] = useState([]);
@@ -69,38 +70,82 @@ function App() {
   ];
 
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/:exercise"
-          element={
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <Home /> <Navbar isTransparent />
+          </>
+        }
+      />
+      <Route
+        path="/:exercise"
+        element={
+          <>
             <BodyPartExercises
               exercises={uniqueEx}
               handleExerciseChange={setFilter}
             />
-          }
-        />
-        <Route
-          path="/bootypump"
-          element={<Programs exercises={exercises} day={3} prog={Pr1} />}
-        />
-        <Route
-          path="/musclebuilding"
-          element={<Programs exercises={exercises} day={3} prog={Pr2} />}
-        />
-        <Route
-          path="/fullbody"
-          element={<Programs exercises={exercises} day={3} prog={Pr3} />}
-        />
-        <Route
-          path="/bodyweight"
-          element={<Programs exercises={exercises} day={3} prog={Pr4} />}
-        />
-        <Route path="/subscription" element={<Subscription />} />
-      </Routes>
-      <Navbar />
-    </>
+            <Navbar />
+          </>
+        }
+      />
+
+      <Route
+        path="/subscription"
+        element={
+          <>
+            <Subscription /> <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/bootypump"
+        element={
+          <>
+            <Programs exercises={exercises} day={3} prog={Pr1} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/musclebuilding"
+        element={
+          <>
+            <Programs exercises={exercises} day={3} prog={Pr2} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/fullbody"
+        element={
+          <>
+            <Programs exercises={exercises} day={3} prog={Pr3} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/bodyweight"
+        element={
+          <>
+            <Programs exercises={exercises} day={3} prog={Pr4} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/dashboard"
+        element={
+          <>
+            <Dashboard exercises={exercises} day={3} mb={Pr2} bw={Pr4} />
+            <Navbar />
+          </>
+        }
+      />
+    </Routes>
   );
 }
 
