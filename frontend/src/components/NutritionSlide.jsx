@@ -8,7 +8,7 @@ import { Pagination } from "swiper";
 
 function NutritionSlide({ data }) {
   return (
-    <div key={data.idMeal}>
+    <div key={data?.idMeal}>
       <section className="NutritionSection">
         <h2>Nutrition</h2>
         <Swiper
@@ -17,11 +17,11 @@ function NutritionSlide({ data }) {
           modules={[Pagination]}
           className="NutritionSlide"
         >
-          {data.map((e) => {
+          {data?.map((e) => {
             return (
-              <SwiperSlide key={e.idMeal}>
-                <img src={e.strMealThumb} alt="food" />
-                <h3>{e.strMeal}</h3>
+              <SwiperSlide key={e?.idMeal}>
+                <img src={e?.strMealThumb} alt="food" />
+                <h3>{e?.strMeal}</h3>
               </SwiperSlide>
             );
           })}

@@ -5,7 +5,9 @@ import { Route, Routes } from "react-router-dom";
 import BodyPartExercises from "./pages/BodyPartExercises";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Subscription from "./components/Subscription";
+import Programs from "./pages/Programs";
+import Subscription from "./pages/Subscription";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const [exercises, setExercises] = useState([]);
@@ -56,23 +58,108 @@ function App() {
     };
   }, []);
 
+  const Pr1 = [
+    [206, 234, 131, 513, 135],
+    [130, 559, 165, 145, 534],
+    [230, 134, 132, 139, 503],
+  ];
+
+  const Pr2 = [
+    [67, 360, 292, 357],
+    [47, 447, 1, 376],
+    [130, 529, 131, 752],
+  ];
+
+  const Pr3 = [
+    [67, 47, 68, 2, 131],
+    [601, 206, 72, 775, 752],
+    [130, 131, 71, 357, 361],
+  ];
+
+  const Pr4 = [
+    [42, 68, 81, 277, 145, 147, 558],
+    [181, 231, 560, 783, 42, 447, 457],
+    [82, 252, 262, 280, 187, 564, 514],
+  ];
+
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home data={nutrition} />} />
-        <Route
-          path="/:exercise"
-          element={
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <Home /> <Navbar isTransparent />
+          </>
+        }
+      />
+      <Route
+        path="/:exercise"
+        element={
+          <>
             <BodyPartExercises
               exercises={uniqueEx}
               handleExerciseChange={setFilter}
             />
-          }
-        />
-        <Route path="/subscription" element={<Subscription />} />
-      </Routes>
-      <Navbar />
-    </>
+            <Navbar />
+          </>
+        }
+      />
+
+      <Route
+        path="/subscription"
+        element={
+          <>
+            <Subscription /> <Navbar />
+          </>
+        }
+      />
+      <Route path="/" element={<Home data={nutrition} />} />
+      <Route
+        path="/bootypump"
+        element={
+          <>
+            <Programs exercises={exercises} day={3} prog={Pr1} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/musclebuilding"
+        element={
+          <>
+            <Programs exercises={exercises} day={3} prog={Pr2} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/fullbody"
+        element={
+          <>
+            <Programs exercises={exercises} day={3} prog={Pr3} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/bodyweight"
+        element={
+          <>
+            <Programs exercises={exercises} day={3} prog={Pr4} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/dashboard"
+        element={
+          <>
+            <Dashboard exercises={exercises} day={3} mb={Pr2} bw={Pr4} />
+            <Navbar />
+          </>
+        }
+      />
+    </Routes>
   );
 }
 
