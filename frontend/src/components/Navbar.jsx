@@ -1,42 +1,3 @@
-// import React from "react";
-
-// function Navbar() {
-//   return (
-//     <div>
-//       <nav className="navbar">
-//         <ul>
-//           <li>
-//             <a href="/">
-//               <img src="./src/assets/dashboard.png" alt="" width="30px" />{" "}
-//               Dashboard
-//             </a>
-//           </li>
-//           <li>
-//             <a href="/">
-//               <img src="./src/assets/ecrire.png" alt="" width="30px" />
-//               Programs
-//             </a>
-//           </li>
-//           <li>
-//             <a href="/">
-//               <img src="./src/assets/haltere.png" alt="" width="30px" />
-//               Exercices
-//             </a>
-//           </li>
-//           <li>
-//             <a href="/">
-//               <img src="./src/assets/plaque.png" alt="" width="30px" />
-//               Nutrition
-//             </a>
-//           </li>
-//         </ul>
-//       </nav>
-//     </div>
-//   );
-// }
-
-// export default Navbar;
-
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link, useNavigate } from "react-router-dom";
@@ -75,16 +36,22 @@ function Navbar({ isTransparent }) {
     e.preventDefault();
     navigate("/");
     setTimeout(() => {
-      window.scrollTo({
-        top: document.getElementById("prog").offsetTop,
-        behavior: "smooth",
-      });
+      if (window.innerWidth > 800) {
+        window.scrollTo({
+          top: document.getElementById("prog").offsetTop - 60,
+          behavior: "smooth",
+        });
+      } else {
+        window.scrollTo({
+          top: document.getElementById("prog").offsetTop,
+          behavior: "smooth",
+        });
+      }
     }, 100);
   };
   const handleScrollToSectionEx = (e) => {
     e.preventDefault();
     navigate("/");
-    console.warn(window.innerWidth);
     setTimeout(() => {
       if (window.innerWidth > 800) {
         window.scrollTo({
@@ -104,10 +71,10 @@ function Navbar({ isTransparent }) {
       <nav className="navbar-mobile">
         <ul>
           <li>
-            <a href="/">
+            <Link to="/dashboard">
               <img src="./src/assets/dashboard.png" alt="" width="30px" />{" "}
               Dashboard
-            </a>
+            </Link>
           </li>
           <li>
             <a href="/" onClick={handleScrollToSectionProg}>
@@ -134,7 +101,9 @@ function Navbar({ isTransparent }) {
           <p>WILD FITNESS CLUB</p>
         </Link>
         <ul>
-          <li>Dashboard</li>
+          <li>
+            <Link to="/dashboard">Dashboard</Link>
+          </li>
           <li>
             <a href="/" onClick={handleScrollToSectionProg}>
               Programs
@@ -155,5 +124,9 @@ function Navbar({ isTransparent }) {
 export default Navbar;
 
 Navbar.propTypes = {
-  isTransparent: PropTypes.bool.isRequired,
+  isTransparent: PropTypes.bool,
+};
+
+Navbar.defaultProps = {
+  isTransparent: false,
 };

@@ -40,7 +40,7 @@ function Day({ prog, exercises, index }) {
               <Exercise
                 key={e.id}
                 name={e.exercise_name}
-                video={e.videoURL}
+                video={e.videoURL[0]}
                 description={e.steps}
               />
             );

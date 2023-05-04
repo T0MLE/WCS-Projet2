@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -15,6 +16,16 @@ import backarrow from "../assets/back-arrow.svg";
 function Programs({ day, exercises, prog }) {
   const dayArr = Array.from({ length: day }, (v, k) => k + 1);
   const weekArr = Array.from({ length: 12 }, (v, k) => k + 1);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const nav = useNavigate();
+
+  const handleNav = () => {
+    nav(-1);
+  };
 
   const progdesc = () => {
     if (window.location.pathname.slice(1) === "bodyweight") {
@@ -255,26 +266,20 @@ function Programs({ day, exercises, prog }) {
     );
   });
 
-  // {arr.map((e, index) => {
-  //   return <Day prog={prog[index]} exercises={exercises} index={index} />;
-  // })}
-
   return (
     <div className="program">
       <div className="headerprog">
         {" "}
         <div className="arrow-title">
-          <Link to="/">
+          <Link to="/" onClick={handleNav}>
             <img className="backarrow" src={backarrow} alt="backarrow" />
           </Link>
           <h2>Our programs</h2>
         </div>
       </div>
-
       <div className="programimage">
         <div className="progpic">{svg()}</div>
       </div>
-
       <div className="programcontainer">{monAutreTruc}</div>
     </div>
   );
@@ -284,6 +289,6 @@ export default Programs;
 
 Programs.propTypes = {
   day: PropTypes.number.isRequired,
-  prog: PropTypes.arrayOf(PropTypes.number).isRequired,
+  prog: PropTypes.arrayOf(PropTypes.shape).isRequired,
   exercises: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };

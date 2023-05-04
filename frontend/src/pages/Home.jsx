@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import Loader from "../components/Loader";
 import ProgramsSec from "../components/ProgramsSec";
 import MannequinWrapper from "../components/MannequinWrapper";
 import Header from "../components/Header";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
+import NutritionSlide from "../components/NutritionSlide";
 
-function Home() {
+function Home({ data }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -21,10 +23,15 @@ function Home() {
       <Header />
       <ProgramsSec />
       <MannequinWrapper />
+      <NutritionSlide data={data} />
       <Newsletter />
       <Footer />
     </div>
   );
 }
+
+Home.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.shape).isRequired,
+};
 
 export default Home;

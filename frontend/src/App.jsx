@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import "./desktop.scss";
 import { Route, Routes } from "react-router-dom";
-// import ClipLoader from "react-spinners/ClipLoader";
 import BodyPartExercises from "./pages/BodyPartExercises";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
+import NutritionPage from "./pages/NutritionPage";
+import HubertEats from "./pages/HubertEats";
 import Programs from "./pages/Programs";
 import Subscription from "./pages/Subscription";
-// import Loader from "./components/Loader";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   const [exercises, setExercises] = useState([]);
@@ -53,13 +54,20 @@ function App() {
     ]);
   }, [filteredExercises]);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 3000);
+  const [nutrition, setNutrition] = useState([]);
+  useEffect(() => {
+    fetch("http://127.0.0.1:3000/data")
+      .then((response) => response.json())
+      .then((result) => {
+        setNutrition(result);
+        console.warn(result);
+      })
+      .catch((error) => console.error(error));
 
-  //   return () => clearTimeout(timer);
-  // }, []);
+    return () => {
+      controller.abort();
+    };
+  }, []);
 
   const Pr1 = [
     [206, 234, 131, 513, 135],
@@ -86,44 +94,108 @@ function App() {
   ];
 
   return (
-    <div>
-      {/* {isLoading ? (
-        <div className="loadercontainer">
-          <ClipLoader color="#36d7b7" loading size={150} />
-        </div>
-      ) : ( */}
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="/:exercise"
-          element={
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <>
+            <Home data={nutrition} /> <Navbar isTransparent />
+          </>
+        }
+      />
+      <Route
+        path="/Nutritionpage"
+        element={
+          <>
+            <NutritionPage data={nutrition} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/Nutritionpage/:idMeal"
+        element={
+          <>
+            <HubertEats data={nutrition} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/"
+        element={
+          <>
+            <Home /> <Navbar isTransparent />
+          </>
+        }
+      />
+      <Route
+        path="/:exercise"
+        element={
+          <>
             <BodyPartExercises
               exercises={uniqueEx}
               handleExerciseChange={setFilter}
             />
-          }
-        />
-        <Route
-          path="/bootypump"
-          element={<Programs exercises={exercises} day={3} prog={Pr1} />}
-        />
-        <Route
-          path="/musclebuilding"
-          element={<Programs exercises={exercises} day={3} prog={Pr2} />}
-        />
-        <Route
-          path="/fullbody"
-          element={<Programs exercises={exercises} day={3} prog={Pr3} />}
-        />
-        <Route
-          path="/bodyweight"
-          element={<Programs exercises={exercises} day={3} prog={Pr4} />}
-        />
-        <Route path="/subscription" element={<Subscription />} />
-      </Routes>
-      <Navbar />
-    </div>
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/subscription"
+        element={
+          <>
+            <Subscription /> <Navbar />
+          </>
+        }
+      />
+      <Route path="/" element={<Home data={nutrition} />} />
+      <Route
+        path="/bootypump"
+        element={
+          <>
+            <Programs exercises={exercises} day={3} prog={Pr1} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/musclebuilding"
+        element={
+          <>
+            <Programs exercises={exercises} day={3} prog={Pr2} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/fullbody"
+        element={
+          <>
+            <Programs exercises={exercises} day={3} prog={Pr3} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/bodyweight"
+        element={
+          <>
+            <Programs exercises={exercises} day={3} prog={Pr4} />
+            <Navbar />
+          </>
+        }
+      />
+      <Route
+        path="/dashboard"
+        element={
+          <>
+            <Dashboard exercises={exercises} day={3} mb={Pr2} bw={Pr4} />
+            <Navbar />
+          </>
+        }
+      />
+    </Routes>
   );
 }
 
