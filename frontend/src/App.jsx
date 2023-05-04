@@ -6,6 +6,8 @@ import BodyPartExercises from "./pages/BodyPartExercises";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Subscription from "./components/Subscription";
+import NutritionPage from "./pages/NutritionPage";
+import HubertEats from "./pages/HubertEats";
 
 function App() {
   const [exercises, setExercises] = useState([]);
@@ -48,9 +50,11 @@ function App() {
     fetch("http://127.0.0.1:3000/data")
       .then((response) => response.json())
       .then((result) => {
-        setNutrition(result.slice(0, 10));
+        setNutrition(result);
+        console.warn(result);
       })
       .catch((error) => console.error(error));
+
     return () => {
       controller.abort();
     };
@@ -60,6 +64,14 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home data={nutrition} />} />
+        <Route
+          path="/Nutritionpage"
+          element={<NutritionPage data={nutrition} />}
+        />
+        <Route
+          path="/Nutritionpage/:idMeal"
+          element={<HubertEats data={nutrition} />}
+        />
         <Route
           path="/:exercise"
           element={
