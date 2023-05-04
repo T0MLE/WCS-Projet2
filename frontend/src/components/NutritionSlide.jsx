@@ -9,7 +9,7 @@ import { Pagination } from "swiper";
 
 function NutritionSlide({ data }) {
   return (
-    <div key={data.idMeal}>
+    <div key={data?.idMeal}>
       <section className="NutritionSection">
         <h2>Nutrition</h2>
         <div className="swipper">
@@ -57,7 +57,7 @@ function NutritionSlide({ data }) {
               )
               .map((e) => {
                 return (
-                  <div>
+                  <div key={e?.idMeal}>
                     <Link to={`/Nutritionpage/${e.idMeal}`}>
                       <img src={e?.strMealThumb} alt="food" />
                     </Link>

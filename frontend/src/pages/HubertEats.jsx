@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
-import { useParams } from "react-router-dom";
+import backarrow from "../assets/back-arrow.svg";
 
 function HubertEats({ data }) {
+  const nav = useNavigate();
+  const handleNav = () => {
+    nav(-1);
+  };
   const [singleMeal, setSingleMeal] = useState({});
   const { idMeal } = useParams();
 
@@ -17,7 +22,12 @@ function HubertEats({ data }) {
     <div>
       {Boolean(data.length) && (
         <section className="NutritionID">
-          <h2>{singleMeal?.strMeal}</h2>
+          <div className="arrow-title">
+            <Link to="/Nutritonpage" onClick={handleNav}>
+              <img className="backarrow" src={backarrow} alt="backarrow" />
+            </Link>{" "}
+            <h2>{singleMeal?.strMeal}</h2>
+          </div>
           <div key={singleMeal?.idMeal} className="flex">
             <img src={singleMeal?.strMealThumb} alt="food" />
             <article className="Ingredient">
