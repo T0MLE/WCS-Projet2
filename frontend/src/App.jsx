@@ -3,11 +3,11 @@ import "./App.scss";
 import "./desktop.scss";
 import { Route, Routes } from "react-router-dom";
 // import ClipLoader from "react-spinners/ClipLoader";
-import BodyPartExercises from "./components/BodyPartExercises";
-import Home from "./components/Home";
+import BodyPartExercises from "./pages/BodyPartExercises";
+import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
-import Programs from "./components/Programs";
-import Subscription from "./components/Subscription";
+import Programs from "./pages/Programs";
+import Subscription from "./pages/Subscription";
 // import Loader from "./components/Loader";
 
 function App() {

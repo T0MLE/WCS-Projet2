@@ -175,7 +175,7 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     max-width: 150rem;
-    margin: 30px;
+    margin: 40px;
   }
   .programtext,
   .Description,
@@ -190,6 +190,9 @@
   .descriptiondesk {
     font-size: 1.3vw;
     display: block;
+    .black-button {
+      margin: 45px 10px;
+    }
   }
   #descriptiondesk {
     font-size: 0;
@@ -200,15 +203,16 @@
     }
     .startprog {
       padding-top: 80px;
+      .black-button {
+        margin: 20px 10px;
+      }
     }
-      
   }
   .programimage {
     display: flex;
     flex-direction: column;
     .progpic {
-      display: flex;
-      justify-content: center;
+      
       margin: 30px 0;
     }
     img {
@@ -216,12 +220,11 @@
       border-radius: 30px;
     }
   }
- 
-.headerprog {
-  display: flex;
-    margin: 0 50px;
-}
 
+  .headerprog {
+    display: flex;
+    margin: 0 50px;
+  }
 
   .imagegalery {
     display: grid;
@@ -318,63 +321,65 @@
     margin-bottom: 50px;
   }
 
-    /* ---------------------------------------------------LOADER DESKTOP----------------------------------------------------------------- */
+  /* ---------------------------------------------------LOADER DESKTOP----------------------------------------------------------------- */
 
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: row; /* set direction to row */
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: opacity 0.75s, visibility 0.75s;
+  .loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row; /* set direction to row */
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.75s, visibility 0.75s;
     backdrop-filter: blur(10px);
 
-  .dot-container{
-    display: flex;
-  flex-direction: row; /* set direction to row */
-  justify-content: center;
-  align-items: center;
+    .dot-container {
+      display: flex;
+      flex-direction: row; /* set direction to row */
+      justify-content: center;
+      align-items: center;
+    }
   }
-}
 
-.dot {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: #6eb8ff;
-  box-shadow: 0 0 20px #6eb8ff, 0 0 40px #6eb8ff, 0 0 60px #6eb8ff, 0 0 80px #6eb8ff, 0 0 100px #6eb8ff, 0 0 120px #6eb8ff, 0 0 140px #6eb8ff, 0 0 160px #6eb8ff, 0 0 180px #6eb8ff, 0 0 200px #6eb8ff, 0 0 220px #6eb8ff, 0 0 240px #6eb8ff;
-  animation: spin 1s linear infinite;
-  margin: 0 10px;
-}
+  .dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #6eb8ff;
+    box-shadow: 0 0 20px #6eb8ff, 0 0 40px #6eb8ff, 0 0 60px #6eb8ff,
+      0 0 80px #6eb8ff, 0 0 100px #6eb8ff, 0 0 120px #6eb8ff, 0 0 140px #6eb8ff,
+      0 0 160px #6eb8ff, 0 0 180px #6eb8ff, 0 0 200px #6eb8ff, 0 0 220px #6eb8ff,
+      0 0 240px #6eb8ff;
+    animation: spin 1s linear infinite;
+    margin: 0 10px;
+  }
 
-.dot:nth-child(2) {
-  animation-delay: -0.4s;
-}
+  .dot:nth-child(2) {
+    animation-delay: -0.4s;
+  }
 
-.dot:nth-child(3) {
-  animation-delay: -0.8s;
-}
+  .dot:nth-child(3) {
+    animation-delay: -0.8s;
+  }
 
-.loader-hidden {
-   opacity: 0;
+  .loader-hidden {
+    opacity: 0;
     visibility: hidden;
-   }
+  }
 
-@keyframes spin {
-  0% {
-    transform: scale(1);
+  @keyframes spin {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
-  50% {
-    transform: scale(0.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 }

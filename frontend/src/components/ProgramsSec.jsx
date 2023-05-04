@@ -4,12 +4,12 @@ import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 import { Pagination } from "swiper";
 import Start from "./Start";
-import bp1 from "../assets/bp1.svg";
-import bw1 from "../assets/bw1.svg";
-import fb1 from "../assets/fb1.svg";
-import mb1 from "../assets/mb1.svg";
-import ct1 from "../assets/ct1.svg";
-import sm1 from "../assets/sm1.svg";
+import bp1 from "../assets/bp1.png";
+import bw1 from "../assets/bw1.png";
+import fb1 from "../assets/fb1.png";
+import mb1 from "../assets/mb1.png";
+import ct1 from "../assets/ct1.png";
+import sm1 from "../assets/sm1.png";
 
 function ProgramsSec() {
   return (
