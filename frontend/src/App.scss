@@ -647,6 +647,7 @@ video {
   padding: 16px 16px 65px 16px;
   display: flex;
   flex-direction: column;
+  min-height: calc(100vh - 211px);
   .arrow-title {
   display: flex;
   flex-direction: row;
@@ -660,6 +661,14 @@ width: 100%;
 }
 }
 
+.error-msg {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  margin-top: 16px;
+}
 
 a {
 	display: flex;
@@ -814,7 +823,6 @@ margin-bottom: 16px;
   align-items: center;
   background-color: white;
   width: 100%;
-  margin: auto;
   height: 0px;
   border-radius: 16px;
   border: none;
