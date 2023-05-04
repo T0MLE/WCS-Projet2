@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams, useNavigate } from "react-router-dom";
 
@@ -103,9 +103,8 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
       <div className={filterOpen ? "filters filters-open" : "filters"}>
         {categories.map((c) => {
           return (
-            <>
+            <Fragment key={categories.indexOf(c)}>
               <input
-                key={categories.indexOf(c)}
                 type="checkbox"
                 name=""
                 id=""
@@ -129,7 +128,7 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
                 }}
               />
               <label htmlFor={c}>{c}</label>
-            </>
+            </Fragment>
           );
         })}
       </div>
