@@ -16,7 +16,6 @@ function HubertEats({ data }) {
   useEffect(() => {
     const meal = data.filter((e) => e?.idMeal === idMeal);
     setSingleMeal(meal[0]);
-    console.warn(meal[0]);
   }, [idMeal, data]);
   return (
     <div>

@@ -15,7 +15,9 @@ function ProgramsSec() {
   return (
     <div className="ProgramSection">
       <div className="programtext">
-        <h2 className="ProgramsTit">Explore our programs</h2>
+        <h2 className="ProgramsTit" id="prog">
+          Explore our programs
+        </h2>
         <p className="Description">
           {" "}
           Do you want to reach your fitness goals ? {"\n"} {"\n"} We have

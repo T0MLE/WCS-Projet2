@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.scss";
 import "./desktop.scss";
 import { Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 import BodyPartExercises from "./pages/BodyPartExercises";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
@@ -60,7 +61,6 @@ function App() {
       .then((response) => response.json())
       .then((result) => {
         setNutrition(result);
-        console.warn(result);
       })
       .catch((error) => console.error(error));
 
@@ -99,7 +99,7 @@ function App() {
         path="/"
         element={
           <>
-            <Home data={nutrition} /> <Navbar isTransparent />
+            <Home data={nutrition} /> <Navbar isTransparent /> <Footer />
           </>
         }
       />
@@ -109,6 +109,7 @@ function App() {
           <>
             <NutritionPage data={nutrition} />
             <Navbar />
+            <Footer />
           </>
         }
       />
@@ -118,6 +119,7 @@ function App() {
           <>
             <HubertEats data={nutrition} />
             <Navbar />
+            <Footer />
           </>
         }
       />
@@ -126,6 +128,7 @@ function App() {
         element={
           <>
             <Home /> <Navbar isTransparent />
+            <Footer />
           </>
         }
       />
@@ -138,6 +141,7 @@ function App() {
               handleExerciseChange={setFilter}
             />
             <Navbar />
+            <Footer />
           </>
         }
       />
@@ -145,17 +149,17 @@ function App() {
         path="/subscription"
         element={
           <>
-            <Subscription /> <Navbar />
+            <Subscription /> <Navbar /> <Footer />
           </>
         }
       />
-      <Route path="/" element={<Home data={nutrition} />} />
       <Route
         path="/bootypump"
         element={
           <>
             <Programs exercises={exercises} day={3} prog={Pr1} />
             <Navbar />
+            <Footer />
           </>
         }
       />
@@ -165,6 +169,7 @@ function App() {
           <>
             <Programs exercises={exercises} day={3} prog={Pr2} />
             <Navbar />
+            <Footer />
           </>
         }
       />
@@ -174,6 +179,7 @@ function App() {
           <>
             <Programs exercises={exercises} day={3} prog={Pr3} />
             <Navbar />
+            <Footer />
           </>
         }
       />
@@ -183,6 +189,7 @@ function App() {
           <>
             <Programs exercises={exercises} day={3} prog={Pr4} />
             <Navbar />
+            <Footer />
           </>
         }
       />
@@ -192,6 +199,7 @@ function App() {
           <>
             <Dashboard exercises={exercises} day={3} mb={Pr2} bw={Pr4} />
             <Navbar />
+            <Footer />
           </>
         }
       />

@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Link, useNavigate } from "react-router-dom";
+import dash from "../assets/dashboard.png";
+import prog from "../assets/ecrire.png";
+import exo from "../assets/haltere.png";
+import nut from "../assets/plaque.png";
 
 function Navbar({ isTransparent }) {
   const [navBackground, setNavBackground] = useState("navbar-desktop-scrolled");
@@ -12,7 +16,6 @@ function Navbar({ isTransparent }) {
       setNavBackground("navbar-desktop navbar-desktop-scrolled");
     }
   };
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     handleScroll();
@@ -20,18 +23,14 @@ function Navbar({ isTransparent }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
   useEffect(() => {
     if (isTransparent) {
       setNavBackground("navbar-desktop");
       return;
     }
-
     setNavBackground("navbar-desktop navbar-desktop-scrolled");
   }, [isTransparent]);
-
   const navigate = useNavigate();
-
   const handleScrollToSectionProg = (e) => {
     e.preventDefault();
     navigate("/");
@@ -72,27 +71,27 @@ function Navbar({ isTransparent }) {
         <ul>
           <li>
             <Link to="/dashboard">
-              <img src="./src/assets/dashboard.png" alt="" width="30px" />{" "}
+              <img src={dash} alt="" width="30px" className="nav-icon" />
               Dashboard
             </Link>
           </li>
           <li>
             <a href="/" onClick={handleScrollToSectionProg}>
-              <img src="./src/assets/ecrire.png" alt="" width="30px" />
+              <img src={prog} alt="" width="30px" />
               Programs
             </a>
           </li>
           <li>
             <a href="/" onClick={handleScrollToSectionEx}>
-              <img src="./src/assets/haltere.png" alt="" width="30px" />
+              <img src={exo} alt="" width="30px" />
               Exercices
             </a>
           </li>
           <li>
-            <a href="/">
-              <img src="./src/assets/plaque.png" alt="" width="30px" />
+            <Link to="/Nutritionpage">
+              <img src={nut} alt="" width="30px" />
               Nutrition
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
@@ -114,19 +113,18 @@ function Navbar({ isTransparent }) {
               Exercises
             </a>
           </li>
-          <li>Nutrition</li>
+          <li>
+            <Link to="/Nutritionpage">Nutrition</Link>
+          </li>
         </ul>
       </nav>
     </div>
   );
 }
-
 export default Navbar;
-
 Navbar.propTypes = {
   isTransparent: PropTypes.bool,
 };
-
 Navbar.defaultProps = {
   isTransparent: false,
 };

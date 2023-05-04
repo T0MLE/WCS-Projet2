@@ -41,8 +41,6 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
     if (exercises.length) {
       setFilteredExercises(exercises);
     }
-
-    console.info(filter);
   }, [filter, exercises.length]);
 
   handleExerciseChange(exercise);

@@ -5,7 +5,6 @@ import ProgramsSec from "../components/ProgramsSec";
 import MannequinWrapper from "../components/MannequinWrapper";
 import Header from "../components/Header";
 import Newsletter from "../components/Newsletter";
-import Footer from "../components/Footer";
 import NutritionSlide from "../components/NutritionSlide";
 
 function Home({ data }) {
@@ -25,7 +24,6 @@ function Home({ data }) {
       <MannequinWrapper />
       <NutritionSlide data={data} />
       <Newsletter />
-      <Footer />
     </div>
   );
 }
