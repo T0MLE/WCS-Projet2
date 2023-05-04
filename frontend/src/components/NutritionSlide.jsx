@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
-
 import { Pagination } from "swiper";
 
 function NutritionSlide({ data }) {
@@ -75,9 +74,7 @@ function NutritionSlide({ data }) {
     </div>
   );
 }
-
 NutritionSlide.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
-
 export default NutritionSlide;

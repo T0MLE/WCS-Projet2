@@ -10,7 +10,6 @@ function Header() {
           <h2>
             Get into the <br /> fitness journey
           </h2>
-
           <button type="button">
             <Link to="/subscription">Join the team</Link>
           </button>

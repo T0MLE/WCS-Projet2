@@ -15,7 +15,7 @@ function Day({ prog, exercises, index }) {
     <div className="accordion">
       <Accordion
         sx={{
-          backgroundColor: "#f5f8fa;",
+          backgroundColor: "#f5f8fa !important",
           borderRadius: "16px !important",
           border: "none",
           color: "black",

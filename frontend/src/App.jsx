@@ -16,6 +16,8 @@ function App() {
   const [filteredExercises, setFilteredExercises] = useState([]);
   const [filter, setFilter] = useState("");
   const [uniqueEx, setUniqueEx] = useState([]);
+  // const [isLoading, setIsLoading] = useState(true);
+
   const options = {
     method: "GET",
     headers: {
@@ -26,10 +28,15 @@ function App() {
   const controller = new AbortController();
 
   useEffect(() => {
+    // setIsLoading(true);
     fetch("https://musclewiki.p.rapidapi.com/exercises", options)
       .then((response) => response.json())
-      .then((response) => setExercises(response))
+      .then((response) => {
+        setExercises(response);
+        // setIsLoading(false);
+      })
       .catch((err) => console.error(err));
+    // .finally(() => setIsLoading(false));
     return () => {
       controller.abort();
     };
@@ -134,7 +141,6 @@ function App() {
           </>
         }
       />
-
       <Route
         path="/subscription"
         element={

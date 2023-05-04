@@ -430,13 +430,22 @@ header {
   margin: 50px 30px 20px;
 }
 
+.imagegalery {
+  display: none;
+}
+
+.descriptiondesk {
+  font-size: 0;
+  display: none;
+}
+
 
 /* ---------------------------------------------------PROGRAM COMPONENT----------------------------------------------------------------- */
 
 .Card1 {
   height: 90vw;
   font-size: 0px;
-  background-image: url("./assets/bp1.svg") !important;
+  background-image: url("./assets/bp1.png") ;
   background-position: center ;
   background-repeat: no-repeat ;
   background-size: contain ;
@@ -447,7 +456,7 @@ header {
 .Card2 {
   height: 90vw;
   font-size: 0px;
-  background-image: url("./assets/mb1.svg") !important;
+  background-image: url("./assets/mb1.png") ;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -457,7 +466,7 @@ header {
 .Card3 {
   height: 90vw;
   font-size: 0px;
-  background-image: url("./assets/fb1.svg") !important;
+  background-image: url("./assets/fb1.png") !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -467,7 +476,7 @@ header {
 .Card4 {
   height: 90vw;
   font-size: 0px;
-  background-image: url("./assets/bw1.svg") !important;
+  background-image: url("./assets/bw1.png") !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -477,7 +486,7 @@ header {
 .Card5 {
   height: 90vw;
   font-size: 0px;
-  background-image: url("./assets/sm1lock.svg") !important;
+  background-image: url("./assets/sm1lock.png") !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -487,7 +496,7 @@ header {
 .Card6 {
   height: 90vw;
   font-size: 0px;
-  background-image: url("./assets/ct1lock.svg") !important;
+  background-image: url("./assets/ct1lock.png") !important;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -528,6 +537,33 @@ header {
   img {
     width: 100%;
   }
+}
+
+.accordionweek {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+
+.ProgramSection {
+  .black-button {
+    margin: 32px auto;
+  }
+}
+
+.programdesc {
+  margin: 30px 0;
+  p{
+    font-size: 11px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+
+.programdescmobile {
+  margin: 30px 0;
 }
 /* ---------------------------------------------------MANNEQUIN SECTION HOMEPAGE----------------------------------------------------------------- */
 
