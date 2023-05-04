@@ -10,10 +10,6 @@ import bp1 from "../assets/bp1.png";
 import bw1 from "../assets/bw1.png";
 import mb1 from "../assets/mb1.png";
 import fb1 from "../assets/fb1.png";
-import bbp1 from "../assets/bbp1.svg";
-import bmb1 from "../assets/bmb1.png";
-import bfb1 from "../assets/bfb1.png";
-import bbw1 from "../assets/bbw1.png";
 import backarrow from "../assets/back-arrow.svg";
 
 function Programs({ day, exercises, prog }) {
@@ -41,6 +37,7 @@ function Programs({ day, exercises, prog }) {
             improve your strength, flexibility, and overall fitness with a
             bodyweight program.
           </p>
+          <Start content="Start this program" />
         </div>
       );
     }
@@ -63,6 +60,7 @@ function Programs({ day, exercises, prog }) {
             Try Booty Pump for firmer, toned, and sculpted glutes in just 12
             weeks.
           </p>
+          <Start content="Start this program" />
         </div>
       );
     }
@@ -91,6 +89,7 @@ function Programs({ day, exercises, prog }) {
             Try Full Body for improved strength, conditioning, and overall
             fitness in just 12 weeks.
           </p>
+          <Start content="Start this program" />
         </div>
       );
     }
@@ -119,6 +118,7 @@ function Programs({ day, exercises, prog }) {
             Try Muscle Building for increased muscle mass and definition in just
             12 weeks.
           </p>
+          <Start content="Start this program" />
         </div>
       );
     }
@@ -129,11 +129,22 @@ function Programs({ day, exercises, prog }) {
     if (window.location.pathname.slice(1) === "bootypump") {
       return window.innerWidth < 800 ? (
         <>
-          <img src={bp1} alt="bootypump" /> {progdesc()}{" "}
+          <img src={bp1} alt="bootypump" />
+          <div className="programdescmobile">
+            <h3>Booty Pump: Build Your Best Butt</h3>
+            <p>
+              Booty Pump is a 12-week glute-strengthening program for all
+              fitness levels. It combines muscle-building exercises with
+              advanced training techniques and includes a customized nutrition
+              plan for optimal results. Achieve firmer, toned, and sculpted
+              glutes with Booty Pump.
+            </p>
+            <Start content="Start this program" />
+          </div>
         </>
       ) : (
         <>
-          <img src={bbp1} alt="bootypump" />
+          <img src={bp1} alt="bootypump" />
           {progdesc()}{" "}
         </>
       );
@@ -141,23 +152,44 @@ function Programs({ day, exercises, prog }) {
     if (window.location.pathname.slice(1) === "bodyweight") {
       return window.innerWidth < 800 ? (
         <>
-          <img src={bw1} alt="bodyweight" /> {progdesc()}
+          <img src={bw1} alt="bodyweight" />{" "}
+          <div className="programdescmobile">
+            <h3>Bodyweight Program: Get Fit Anywhere Without Equipment</h3>
+            <p>
+              The Bodyweight Program is a simple and effective way to get fit
+              without equipment. Popular exercises like push-ups, squats,
+              lunges, planks, and burpees can be done anywhere and are suitable
+              for all fitness levels. With consistency, a Bodyweight Program can
+              improve strength, flexibility, and overall fitness.
+            </p>
+            <Start content="Start this program" />
+          </div>
         </>
       ) : (
         <>
-          <img src={bbw1} alt="bodyweight" /> {progdesc()}
+          <img src={bw1} alt="bodyweight" /> {progdesc()}
         </>
       );
     }
     if (window.location.pathname.slice(1) === "fullbody") {
       return window.innerWidth < 800 ? (
         <>
-          <img src={fb1} alt="fullbody" />
-          {progdesc()}
+          <img src={fb1} alt="fullbody" />{" "}
+          <div className="programdescmobile">
+            <h3>Full Body: Achieve Fullbody Fitness</h3>
+            <p>
+              A 12-week program designed to improve overall strength and
+              conditioning with free weight exercises targeting all major muscle
+              groups. Suitable for all fitness levels with traditional training
+              techniques for optimal muscle growth and strength gains. Includes
+              exercises for endurance and a customized nutrition plan.
+            </p>
+            <Start content="Start this program" />
+          </div>
         </>
       ) : (
         <>
-          <img src={bfb1} alt="fullbody" />
+          <img src={fb1} alt="fullbody" />
           {progdesc()}
         </>
       );
@@ -165,12 +197,24 @@ function Programs({ day, exercises, prog }) {
     if (window.location.pathname.slice(1) === "musclebuilding") {
       return window.innerWidth < 800 ? (
         <>
-          <img src={mb1} alt="musclebuilding" />
-          {progdesc()}
+          {" "}
+          <img src={mb1} alt="musclebuilding" />{" "}
+          <div className="programdescmobile">
+            <h3>Muscle Building: Sculpt Your Ideal Physique</h3>
+            <p>
+              Muscle Building is a 12-week program designed to increase muscle
+              mass and definition through a variety of exercises suitable for
+              all fitness levels. With traditional training techniques and a
+              customized nutrition plan, you can achieve optimal results and
+              progressively increase difficulty each week. Try Muscle Building
+              for a more sculpted physique in just 12 weeks.
+            </p>
+            <Start content="Start this program" />
+          </div>
         </>
       ) : (
         <>
-          <img src={bmb1} alt="musclebuilding" />
+          <img src={mb1} alt="musclebuilding" />
           {progdesc()}
         </>
       );
@@ -225,14 +269,12 @@ function Programs({ day, exercises, prog }) {
           </Link>
           <h2>Our programs</h2>
         </div>
-        <div className="startprog">
-          <Start content="Start this program" />
-        </div>
       </div>
 
       <div className="programimage">
         <div className="progpic">{svg()}</div>
       </div>
+
       <div className="programcontainer">{monAutreTruc}</div>
     </div>
   );

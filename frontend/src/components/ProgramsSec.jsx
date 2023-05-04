@@ -8,8 +8,8 @@ import bp1 from "../assets/bp1.png";
 import bw1 from "../assets/bw1.png";
 import fb1 from "../assets/fb1.png";
 import mb1 from "../assets/mb1.png";
-import ct1 from "../assets/ct1.png";
-import sm1 from "../assets/sm1.png";
+import ct1lock from "../assets/ct1lock.png";
+import sm1lock from "../assets/sm1lock.png";
 
 function ProgramsSec() {
   return (
@@ -65,13 +65,13 @@ function ProgramsSec() {
         <div className="cardct1">
           {" "}
           <Link className="linkcard" to="/subscription">
-            <img src={ct1} alt="ct1" width="225" height="225" />
+            <img src={ct1lock} alt="ct1lock" width="225" height="225" />
           </Link>
         </div>
         <div className="cardsm1">
           {" "}
           <Link className="linkcard" to="/subscription">
-            <img src={sm1} alt="sm1" width="225" height="225" />
+            <img src={sm1lock} alt="sm1lock" width="225" height="225" />
           </Link>
         </div>
       </div>
