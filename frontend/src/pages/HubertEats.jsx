@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import PropTypes from "prop-types";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
@@ -22,9 +24,12 @@ function HubertEats({ data }) {
       {Boolean(data.length) && (
         <section className="NutritionID">
           <div className="arrow-title">
-            <Link to="/Nutritonpage" onClick={handleNav}>
-              <img className="backarrow" src={backarrow} alt="backarrow" />
-            </Link>{" "}
+            <img
+              className="backarrow"
+              src={backarrow}
+              alt="backarrow"
+              onClick={handleNav}
+            />
             <h2>{singleMeal?.strMeal}</h2>
           </div>
           <div key={singleMeal?.idMeal} className="flex">

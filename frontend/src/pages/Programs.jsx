@@ -274,7 +274,7 @@ function Programs({ day, exercises, prog }) {
           <Link to="/" onClick={handleNav}>
             <img className="backarrow" src={backarrow} alt="backarrow" />
           </Link>
-          <h2>Our programs</h2>
+          <h2 className="prog-title">Our programs</h2>
         </div>
       </div>
       <div className="programimage">

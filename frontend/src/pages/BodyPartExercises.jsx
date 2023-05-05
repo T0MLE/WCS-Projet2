@@ -146,6 +146,11 @@ function BodyPartExercises({ exercises, handleExerciseChange }) {
             />
           );
         })}
+      <div className="error-msg">
+        {filteredExercises?.filter((item) =>
+          item.exercise_name.toLowerCase().includes(search.toLowerCase())
+        ).length === 0 && "Sorry, nothing to see here."}
+      </div>
     </div>
   );
 }

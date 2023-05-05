@@ -1,4 +1,8 @@
 import React from "react";
+import insta from "../assets/instagram.png";
+import facebook from "../assets/facebook.png";
+import youtube from "../assets/youtube.png";
+import tiktok from "../assets/tik-tok.png";
 
 function Footer() {
   return (
@@ -21,16 +25,16 @@ function Footer() {
       </div>
       <div className="social">
         <a href="/">
-          <img src="./src/assets/instagram.png" alt="logo-Instagram" />
+          <img src={insta} alt="logo-Instagram" />
         </a>
         <a href="/">
-          <img src="./src/assets/facebook.png" alt="logo-Facebook" />
+          <img src={facebook} alt="logo-Facebook" />
         </a>
         <a href="/">
-          <img src="./src/assets/youtube.png" alt="logo-Youtube" />
+          <img src={youtube} alt="logo-Youtube" />
         </a>
         <a href="/">
-          <img src="./src/assets/tik-tok.png" alt="logo-Tiktok" />
+          <img src={tiktok} alt="logo-Tiktok" />
         </a>
       </div>
     </div>
