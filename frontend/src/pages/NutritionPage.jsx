@@ -6,7 +6,6 @@ import "swiper/swiper.min.css";
 
 import { Pagination } from "swiper";
 import { Link, useNavigate } from "react-router-dom";
-import healthy from "../assets/Healthy.png";
 import backarrow from "../assets/back-arrow.svg";
 
 function NutritionPage({ data }) {
@@ -26,7 +25,10 @@ function NutritionPage({ data }) {
           </Link>{" "}
           <h2>Nutrition</h2>
         </div>
-        <img src={healthy} alt="" className="Nutrition-banner" />
+        <div className="Nutrition-banner">
+          <p>Eat clean.</p>
+          <p>Reach your goals.</p>
+        </div>
         <div className="NutritionGalery">
           <h3>Starter</h3>
           <Swiper

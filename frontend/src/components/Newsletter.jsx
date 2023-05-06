@@ -8,8 +8,8 @@ function Newsletter() {
           Subscribe to the <br /> newsletter
         </h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat
-          quam optio dolore perferendis itaque esse?
+          Be the first to know about the release of our upcoming fitness
+          programs.
         </p>
         <input type="email" placeholder="Email Adress" /> <br />
         <button type="submit">Subscribe</button>
