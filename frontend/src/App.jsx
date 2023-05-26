@@ -11,6 +11,7 @@ import HubertEats from "./pages/HubertEats";
 import Programs from "./pages/Programs";
 import Subscription from "./pages/Subscription";
 import Dashboard from "./pages/Dashboard";
+import nutrition from "./data";
 
 function App() {
   const [exercises, setExercises] = useState([]);
@@ -54,20 +55,6 @@ function App() {
       ...new Map(filteredExercises.map((v) => [v.exercise_name, v])).values(),
     ]);
   }, [filteredExercises]);
-
-  const [nutrition, setNutrition] = useState([]);
-  useEffect(() => {
-    fetch("http://127.0.0.1:3000/data")
-      .then((response) => response.json())
-      .then((result) => {
-        setNutrition(result);
-      })
-      .catch((error) => console.error(error));
-
-    return () => {
-      controller.abort();
-    };
-  }, []);
 
   const Pr1 = [
     [206, 234, 131, 513, 135],
