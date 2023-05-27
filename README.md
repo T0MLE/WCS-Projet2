@@ -1,4 +1,10 @@
-<span>![WildFitnessClub__1_-removebg-preview](https://user-images.githubusercontent.com/119880787/235344411-fbed59c8-6de0-4ce9-b7df-8ad18fce18b8.png)<h1>WILD FITNESS CLUB</h1></span>
+<img src="https://github.com/Omcci/WCS-Projet2/assets/119880787/6c047dbe-62a8-4f91-a7d0-9f56ac2aa474" width=25% align="right">
+
+
+<span style="display: inline-block; font-size: 50px;"><h1>WILD FITNESS CLUB</h1></span>
+
+
+
 
 
 Our fitness application uses React and APIs to provide a personalized fitness experience to our users.
@@ -17,9 +23,28 @@ We are a small team passionate about fitness and technology, and we created this
 their fitness goals in an efficient and personalized way. 
 We are proud of this application and we hope it will help you achieve your own fitness goals.
 
-[![React Badge](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)	[![CSS3 Badge](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
-  [![HTML5 Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
-  [![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+It's also responsive and here is the desktop version : 
+
+<img width=20% alt="homepagep2" src="https://github.com/Omcci/WCS-Projet2/assets/119880787/e2b3552e-0b02-40f9-8831-55f6705f3a7f">
+<img width=20% alt="programp2" src="https://github.com/Omcci/WCS-Projet2/assets/119880787/72cf716e-ea0c-4b70-bd53-6d0bb2eb9404">
+<img width=20% alt="exercisep2" src="https://github.com/Omcci/WCS-Projet2/assets/119880787/a93def61-def9-406a-9477-b53837673d0b">
+<img width=20% alt="nutritionpagep2" src="https://github.com/Omcci/WCS-Projet2/assets/119880787/12d53f1a-51a6-4fc0-a3d5-da3508266ea0">
+<img width=20% alt="recipep2" src="https://github.com/Omcci/WCS-Projet2/assets/119880787/53e1d2e2-e50a-4dd6-a399-6a99d59c3062">
+<img width=20% alt="dashboardp2" src="https://github.com/Omcci/WCS-Projet2/assets/119880787/dfbe4512-38fb-40d9-a069-ce674451c816">
+
+  
+    
+    
+Built with :  
+  
+[![React Badge](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/) 
+
+[![CSS3 Badge](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS) 
+
+  [![HTML5 Badge](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5) 
+  
+  [![JavaScript Badge](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/JavaScript) 
+  
 
 ## Concept
 
@@ -66,3 +91,5 @@ For deployment, you have to go to `secrets` → app `actions` on the github repo
 - CAPROVER_FRONT_APPNAME : name app on caprover
 - CAPROVER_PASSWORD : password caprover
 - CAPROVER_SERVER : link of domain
+
+![WildFitnessClub__1_-removebg-preview](https://user-images.githubusercontent.com/119880787/235344411-fbed59c8-6de0-4ce9-b7df-8ad18fce18b8.png)
