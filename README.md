@@ -1,11 +1,11 @@
 <img src="https://github.com/Omcci/WCS-Projet2/assets/119880787/6c047dbe-62a8-4f91-a7d0-9f56ac2aa474" width=25% align="right">
 
 
-<span style="display: inline-block; font-size: 50px;"><h1>WILD FITNESS CLUB</h1></span>
+<span style="display: inline-block; font-size: 50px;"><h1>[WILD FITNESS CLUB](https://astounding-gingersnap-8d73ac.netlify.app)</h1></span>
 
 
 
-
+[Click here to visit the app](https://astounding-gingersnap-8d73ac.netlify.app)
 
 Our fitness application uses React and APIs to provide a personalized fitness experience to our users.
 The main features of our application include:
