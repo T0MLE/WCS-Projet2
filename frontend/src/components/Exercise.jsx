@@ -53,7 +53,7 @@ function Exercise({ name, video, description }) {
           <Typography id="exercise-title">{name}</Typography>
         </AccordionSummary>
         <AccordionDetails id="exercise-content">
-          <video controls ref={videoRef} autoPlay>
+          <video controls ref={videoRef} autoPlay playsInline muted>
             <track default kind="captions" />
             {isVisible && <source src={video} type="video/mp4" />}
           </video>
